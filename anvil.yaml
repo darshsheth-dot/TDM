@@ -34,7 +34,8 @@ db_schema:
     server: full
     title: Categories
 dependencies: []
-name: Clone of News App
+metadata: {description: 'The Daily Mentor is a personal growth companion that delivers focused guidance everyday '}
+name: TDM - Pre-Model
 package_name: News_App
 renamed: true
 runtime_options:
