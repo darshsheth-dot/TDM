@@ -1,10 +1,23 @@
 components:
 - components:
   - components:
-    - layout_properties: {grid_position: 'XUSUGD,LZWMJP'}
+    - layout_properties: {grid_position: 'XUSUGD,TOBFJN'}
+      name: image_1
+      properties: {}
+      type: Image
+    - data_bindings: []
+      layout_properties: {grid_position: 'XUSUGD,LZWMJP KWWUZY,ROZVOH'}
       name: label_1
-      properties: {align: center, font_size: 80, text: TDM}
+      properties: {align: center, font: Satoshi, font_size: 100, text: TDM}
       type: Label
+    - layout_properties: {grid_position: 'XUSUGD,LZWMJP IMNWFK,WXEMIB'}
+      name: label_2
+      properties: {align: center, italic: true, text: The Daily Mentor}
+      type: Label
+    - layout_properties: {grid_position: 'XUSUGD,QQADSH'}
+      name: image_2
+      properties: {}
+      type: Image
     layout_properties: {grid_position: 'WAHAKC,YESLNN'}
     name: column_panel_1
     properties: {}
