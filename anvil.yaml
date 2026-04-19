@@ -34,7 +34,7 @@ db_schema:
     server: full
     title: Categories
 dependencies: []
-metadata: {description: 'The Daily Mentor is a personal growth companion that delivers focused guidance everyday '}
+metadata: {description: ''}
 name: TDM - Pre-Model
 package_name: News_App
 renamed: true
