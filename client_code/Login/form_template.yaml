@@ -20,38 +20,34 @@ components:
     type: ColumnPanel
   - layout_properties: {grid_position: 'TPEXJS,FITEZG'}
     name: sign_up_label
-    properties: {align: center, font: Satoshi, font_size: 40, foreground: 'theme:On Secondary', text: 'Sign-up page:'}
+    properties: {align: center, font: Satoshi, font_size: 40, foreground: 'theme:On Secondary', text: 'Login page:'}
     type: Label
   - layout_properties: {grid_position: 'DHLBCS,PLIOCJ'}
     name: label_3
     properties: {foreground: 'theme:On Primary', text: 'Email:'}
     type: Label
   - layout_properties: {grid_position: 'KOSHYT,PMMYKJ'}
-    name: email_enter
+    name: email_enter2
     properties: {background: '#D3D3D3', foreground: '#000000'}
     type: TextBox
-  - layout_properties: {grid_position: 'IZQRGQ,NIGMAX'}
-    name: label_4
-    properties: {foreground: 'theme:On Secondary', text: 'Preferred username:'}
+  - layout_properties: {grid_position: 'KWFPMZ,VKVILW'}
+    name: error_label2
+    properties: {align: center, background: '#FFFFFF', foreground: '#FF0000', italic: true, text: Please enter a valid email address, visible: false}
     type: Label
-  - layout_properties: {grid_position: 'PQZZAG,KNCPLC'}
-    name: username_enter
-    properties: {background: '#D3D3D3', foreground: '#000000'}
-    type: TextBox
   - layout_properties: {grid_position: 'ITXFYQ,TTTWJM'}
     name: label_5
     properties: {foreground: 'theme:On Secondary', text: 'Password:'}
     type: Label
   - layout_properties: {grid_position: 'GGNPLW,WVDQOF'}
-    name: text_box_1
+    name: password_enter2
     properties: {background: '#D3D3D3', foreground: '#000000'}
     type: TextBox
   - layout_properties: {grid_position: 'XDQEWN,XIYRDN'}
-    name: sign_in_button
+    name: login_button
     properties: {background: '#3CC7CC', border: '1', role: filled-button, text: CONTINUE}
     type: Button
   - layout_properties: {grid_position: 'ZRINMT,EHSXIZ'}
-    name: login_page_button
+    name: sign_in_page_button
     properties:
       align: center
       background: '#1E6BD6'
@@ -59,7 +55,7 @@ components:
       role: elevated-button
       spacing:
         padding: [null, null, 11, null]
-      text: Log-in page
+      text: Signin page
     type: Button
   layout_properties: {slot: default}
   name: content_panel

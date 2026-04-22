@@ -35,7 +35,7 @@ db_schema:
     title: Categories
 dependencies: []
 metadata: {description: ''}
-name: TDM - Pre-Model
+name: TDM - Model
 native_deps: {head_html: ''}
 package_name: News_App
 renamed: true
