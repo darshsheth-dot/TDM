@@ -36,6 +36,7 @@ db_schema:
 dependencies: []
 metadata: {description: ''}
 name: TDM - Pre-Model
+native_deps: {head_html: ''}
 package_name: News_App
 renamed: true
 runtime_options:
@@ -47,5 +48,5 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
-startup: null
-startup_form: Form1
+startup: {module: Signin, type: form}
+startup_form: null
