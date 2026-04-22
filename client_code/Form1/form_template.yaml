@@ -3,10 +3,10 @@ components:
   - components:
     - layout_properties: {grid_position: 'XUSUGD,KDKBCB'}
       name: image_1
-      properties: {source: _/theme/Copilot_20260419_205028.png}
+      properties: {height: 236, source: _/theme/Copilot_20260419_205028.png}
       type: Image
     - data_bindings: []
-      layout_properties: {grid_position: 'XUSUGD,LZWMJP KWWUZY,ROZVOH'}
+      layout_properties: {grid_position: 'XUSUGD,LZWMJP TVBRIZ,OPZVOY'}
       name: label_1
       properties: {align: center, font: Satoshi, font_size: 100, text: TDM}
       type: Label
@@ -14,10 +14,6 @@ components:
       name: label_2
       properties: {align: center, italic: true, text: The Daily Mentor}
       type: Label
-    - layout_properties: {grid_position: 'XUSUGD,QQADSH'}
-      name: image_2
-      properties: {}
-      type: Image
     layout_properties: {grid_position: 'WAHAKC,YESLNN'}
     name: column_panel_1
     properties: {}
