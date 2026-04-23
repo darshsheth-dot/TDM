@@ -12,3 +12,8 @@ class Dashboard(DashboardTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run when the form opens.
+
+  @handle("dashboard_button", "click")
+  def dashboard_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass  # Write Code Here
