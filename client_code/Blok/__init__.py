@@ -1,4 +1,4 @@
-from ._anvil_designer import DashboardTemplate
+from ._anvil_designer import BlokTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables
@@ -6,7 +6,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 
-class Dashboard(DashboardTemplate):
+class Blok(BlokTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -16,11 +16,5 @@ class Dashboard(DashboardTemplate):
   @handle("dashboard_button", "click")
   def dashboard_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('Dashboard')
-    pass  
-
-  @handle("blok_button", "click")
-  def blok_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form('Blok')
-    
+    open_form("Dashboard")
+    pass
