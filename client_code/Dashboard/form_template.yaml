@@ -1,52 +1,12 @@
 components:
-- layout_properties: {slot: nav-right}
-  name: navbar_links
-  properties: {}
-  type: FlowPanel
-- components:
-  - components:
-    - components:
-      - layout_properties: {grid_position: 'KAWDVW,KWXGWI'}
-        name: image_1
-        properties: {height: 145, source: _/theme/dboard logo.png}
-        type: Image
-      layout_properties: {}
-      name: outlined_card_1
-      properties: {role: outlined-card}
-      type: ColumnPanel
-    layout_properties: {grid_position: 'GRUHCV,TYYBPO'}
-    name: flow_panel_1
-    properties: {}
-    type: FlowPanel
-  - event_bindings: {}
-    layout_properties: {grid_position: 'EXDNCD,VVAQEP'}
-    name: dashboard_button
-    properties:
-      role: outlined-button
-      text: |
-        Dashboard
-    type: Button
-  - event_bindings: {}
-    layout_properties: {grid_position: 'AXIQHU,ACVFZN'}
-    name: blok_button
-    properties:
-      role: outlined-button
-      text: "       Blok      \n"
-    type: Button
-  - event_bindings: {}
-    layout_properties: {grid_position: 'ZDONHK,ZFVDGR'}
-    name: mindmap_button
-    properties: {role: outlined-button, text: '   Mindmap '}
-    type: Button
-  layout_properties: {slot: left-nav}
-  name: column_panel_1
-  properties:
-    background: '#000000'
-    foreground: '#000000'
-    spacing:
-      padding: [null, 190, 723, null]
-  type: ColumnPanel
+- data_bindings: []
+  layout_properties: {grid_position: 'SZPFZB,UINCUR'}
+  name: xy_panel_1
+  properties: {align: center, background: '#1a3a6b', height: '600', spacing_above: none, spacing_below: none, width: 700}
+  type: XYPanel
 container:
-  properties: {html: '@theme:standard-page.html'}
-  type: HtmlTemplate
+  properties:
+    spacing:
+      padding: [0, null, null, null]
+  type: ColumnPanel
 is_package: true
