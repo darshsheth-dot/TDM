@@ -34,8 +34,8 @@ db_schema:
     server: full
     title: Categories
 dependencies: []
-metadata: {description: ''}
-name: TDM - Model
+metadata: {description: '', title: The Daily Mentor}
+name: Syon, Darsh, Ishaan
 native_deps: {head_html: ''}
 package_name: News_App
 renamed: true
