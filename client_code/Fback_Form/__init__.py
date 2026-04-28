@@ -21,7 +21,6 @@ class Fback_Form(Fback_FormTemplate):
     anvil.server.call('add_feedback', name, email, feedback)
     Notification("Feedback submitted!").show()
     # Call your 'clear_inputs' method to clear the boxes
-    self.clear_inputs()
     def clear_inputs(self):
     # Clear our three text boxes
       self.name_box.text = ""
