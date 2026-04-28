@@ -1,47 +1,8 @@
 components:
-- components:
-  - components:
-    - layout_properties: {grid_position: 'ARVQDL,LULUVI'}
-      name: image_5
-      properties: {height: 70.66665649414062, source: _/theme/dog.png}
-      type: Image
-    - event_bindings: {}
-      layout_properties: {grid_position: 'ARVQDL,ENMPEX'}
-      name: button_5
-      properties: {text: The Daily Mentor}
-      type: Button
-    - event_bindings: {}
-      layout_properties: {grid_position: 'XWELFV,LWQMBT'}
-      name: button_1
-      properties: {text: Dashboard}
-      type: Button
-    - event_bindings: {}
-      layout_properties: {grid_position: 'OCVSGY,VNIEUF'}
-      name: button_2
-      properties: {text: Routine}
-      type: Button
-    - event_bindings: {}
-      layout_properties: {grid_position: 'GEWNZK,XXTCQA'}
-      name: button_3
-      properties: {text: Blok}
-      type: Button
-    - event_bindings: {}
-      layout_properties: {grid_position: 'JHOGOP,MJUBWZ'}
-      name: button_4
-      properties: {text: Mindmap}
-      type: Button
-    layout_properties: {width: 196.65625, x: 0, y: 31.375010173767805}
-    name: column_panel_1
-    properties:
-      background: theme:On Secondary
-      spacing:
-        padding: [0, null, null, null]
-    type: ColumnPanel
-  data_bindings: []
-  layout_properties: {grid_position: 'SZPFZB,EGZCQK'}
-  name: xy_panel_1
-  properties: {align: center, background: '#1a3a6b', height: '600', spacing_above: none, spacing_below: none, width: 700}
-  type: XYPanel
+- layout_properties: {grid_position: 'EJEFIZ,SPJIPE'}
+  name: label_1
+  properties: {}
+  type: Label
 container:
   properties:
     spacing:
