@@ -1,6 +1,7 @@
 components:
-- data_bindings: []
-  layout_properties: {grid_position: 'SZPFZB,UINCUR'}
+- components: []
+  data_bindings: []
+  layout_properties: {grid_position: 'SZPFZB,EGZCQK'}
   name: xy_panel_1
   properties: {align: center, background: '#1a3a6b', height: '600', spacing_above: none, spacing_below: none, width: 700}
   type: XYPanel

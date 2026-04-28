@@ -46,3 +46,14 @@ def add_feedback(name, email, feedback):
     feedback=feedback, 
     created=datetime.now()
   )
+  # Send yourself an email each time feedback is submitted
+  anvil.email.send(ishaan.sarin@education.nsw.gov.au)
+    subject=f"Feedback from {name}",
+    text=f"""
+  A new person has filled out the feedback form!
+
+  Name: {name}
+  Email address: {email}
+  Feedback:
+  {feedback}
+  """)
