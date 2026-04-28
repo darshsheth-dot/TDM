@@ -1,11 +1,33 @@
 components:
-- layout_properties: {grid_position: 'EJEFIZ,SPJIPE'}
-  name: label_1
+- layout_properties: {slot: default}
+  name: content_panel
   properties: {}
-  type: Label
-container:
-  properties:
-    spacing:
-      padding: [0, null, null, null]
   type: ColumnPanel
+- layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- components:
+  - layout_properties: {grid_position: 'LOGGVA,NDXXHR'}
+    name: image_1
+    properties: {height: 107, source: _/theme/dboard logo.png}
+    type: Image
+  - layout_properties: {grid_position: 'SYQNKM,UBGVQH'}
+    name: title_label
+    properties: {bold: true, font: Lato, font_size: 25, foreground: '#FFFFFF', text: The DAILY Mentor}
+    type: Label
+  layout_properties: {slot: left-nav}
+  name: column_panel_1
+  properties:
+    background: '#000000'
+    col_spacing: huge
+    role: null
+    spacing:
+      margin: [null, null, 179, null]
+      padding: [null, null, 568, null]
+    spacing_below: none
+  type: ColumnPanel
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
 is_package: true
