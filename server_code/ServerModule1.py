@@ -1,3 +1,4 @@
+from datetime import datetime
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
@@ -35,3 +36,12 @@ def delete_article(article):
     article.delete()
   else:
     raise Exception("Article does not exist")
+
+@anvil.server.callable
+def add_feedback(name, email, feedback):
+  app_tables.feedback.add_row(
+    name=name, 
+    email=email, 
+    feedback=feedback, 
+    created=datetime.now()
+  )

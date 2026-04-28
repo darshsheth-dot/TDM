@@ -11,3 +11,13 @@ class Fback_Form(Fback_FormTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run when the form opens.
+
+
+  @handle("submit_button", "click")
+  def submit_button_click(self, **event_args):
+    name = self.name_box.text
+    email = self.email_box.text
+    feedback = self.feedback_box.text
+    anvil.server.call('add_feedback', name, email, feedback)
+    # Show a popup that says 'Feedback submitted!'
+    Notification("Feedback submitted!").show()
