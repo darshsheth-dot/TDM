@@ -19,5 +19,11 @@ class Fback_Form(Fback_FormTemplate):
     email = self.email_box.text
     feedback = self.feedback_box.text
     anvil.server.call('add_feedback', name, email, feedback)
-    # Show a popup that says 'Feedback submitted!'
     Notification("Feedback submitted!").show()
+    # Call your 'clear_inputs' method to clear the boxes
+    self.clear_inputs()
+    def clear_inputs(self):
+    # Clear our three text boxes
+      self.name_box.text = ""
+    self.email_box.text = ""
+    self.feedback_box.text = ""
