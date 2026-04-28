@@ -48,5 +48,5 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
-startup: {module: Login, type: form}
+startup: {module: Dashboard, type: form}
 startup_form: null
