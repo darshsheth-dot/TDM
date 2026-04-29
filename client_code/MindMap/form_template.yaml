@@ -18,25 +18,57 @@ components:
       spacing:
         margin: [null, null, null, null]
     type: ColumnPanel
-  - components: []
-    layout_properties: {grid_position: 'SVYUZW,FPRYDL XXFEXB,TZNDKW'}
-    name: outlined_card_2
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
-    type: ColumnPanel
   - layout_properties: {grid_position: 'SVYUZW,FPRYDL XRXBPT,FVRBSK'}
     name: spacer_4
     properties: {height: '2'}
     type: Spacer
-  - components: []
-    layout_properties: {grid_position: 'SVYUZW,OAYXHX HZAXUJ,ADOZIL'}
-    name: outlined_card_3
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
-    type: ColumnPanel
-  - layout_properties: {grid_position: 'SVYUZW,OAYXHX GAXTNB,ORMOHC'}
+  - layout_properties: {grid_position: 'SVYUZW,OAYXHX'}
     name: spacer_5
     properties: {height: '2'}
     type: Spacer
-  - components: []
+  - components:
+    - components: []
+      layout_properties: {grid_position: 'SGUEGV,YQJUNE'}
+      name: rich_text_1
+      properties: {content: 'Subject:'}
+      type: RichText
+    - layout_properties: {grid_position: 'WKQAMX,BTTFSX'}
+      name: subject_box
+      properties: {role: outlined}
+      type: TextBox
+    - components: []
+      layout_properties: {grid_position: 'YEWEDC,UMUGFJ'}
+      name: rich_text_2
+      properties: {content: 'Subtopic: '}
+      type: RichText
+    - layout_properties: {grid_position: 'PXRBGS,GPULEI'}
+      name: subtopic_box
+      properties: {role: outlined}
+      type: TextBox
+    - layout_properties: {grid_position: 'FKHCWB,ZYARNT'}
+      name: rich_text_3
+      properties: {content: 'Branch: '}
+      type: RichText
+    - layout_properties: {grid_position: 'WIKAJU,GHEUUR'}
+      name: branch_box
+      properties: {role: outlined}
+      type: TextBox
+    - layout_properties: {grid_position: 'CGQBUX,YDFYRY'}
+      name: rich_text_4
+      properties: {content: 'Grade: '}
+      type: RichText
+    - layout_properties: {grid_position: 'EZDPPE,QZUEWK'}
+      name: grade_box
+      properties: {role: outlined}
+      type: TextBox
+    - layout_properties: {grid_position: 'AEVDIW,NOUFAB'}
+      name: mindmap_output
+      properties: {}
+      type: Label
+    - layout_properties: {grid_position: 'CPPEWC,EFQEPG'}
+      name: generate_button
+      properties: {role: outlined-button, text: Generate Mindmap}
+      type: Button
     layout_properties: {grid_position: 'KQWHAG,MWIKAI'}
     name: outlined_card_4
     properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
