@@ -72,6 +72,7 @@ components:
     type: Label
   - data_bindings:
     - {code: 'self.item['''']', property: border, writeback: false}
+    event_bindings: {}
     layout_properties: {full_width_row: true, grid_position: 'SGDUMT,NVXJZV', row_background: '#3CC7CC '}
     name: Dashboard_button
     properties:
@@ -91,7 +92,8 @@ components:
     name: spacer_1
     properties: {height: '5'}
     type: Spacer
-  - layout_properties: {full_width_row: true, grid_position: 'PFETRG,KUGECG', row_background: '#000000 '}
+  - event_bindings: {}
+    layout_properties: {full_width_row: true, grid_position: 'PFETRG,KUGECG', row_background: '#000000 '}
     name: mindmap_button
     properties:
       background: '#000000'
@@ -107,7 +109,8 @@ components:
     name: spacer_2
     properties: {height: '5'}
     type: Spacer
-  - layout_properties: {full_width_row: true, grid_position: 'EGDBIL,XNPTCC'}
+  - event_bindings: {}
+    layout_properties: {full_width_row: true, grid_position: 'EGDBIL,XNPTCC'}
     name: routine_button
     properties:
       background: '#000000'
@@ -123,7 +126,8 @@ components:
     name: spacer_3
     properties: {height: '5'}
     type: Spacer
-  - layout_properties: {full_width_row: true, grid_position: 'GEPDID,NZBGFO', row_background: '#000000'}
+  - event_bindings: {}
+    layout_properties: {full_width_row: true, grid_position: 'GEPDID,NZBGFO', row_background: '#000000'}
     name: blok_button
     properties:
       background: '#000000'
