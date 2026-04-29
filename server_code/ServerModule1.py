@@ -1,15 +1,9 @@
 import anvil.email
-from datetime import datetime
-import anvil.tables as tables
-import anvil.tables.query as q
-from anvil.tables import app_tables
 import anvil.server
-import requests
-import json
+from anvil.tables import app_tables
+from datetime import datetime
 
-# -------------------------------
-# FEEDBACK SYSTEM (your original)
-# -------------------------------
+# FEEDBACK SYSTEM
 
 @anvil.server.callable
 def add_feedback(name, email, feedback):
@@ -34,57 +28,30 @@ Feedback:
 """
   )
 
-# -------------------------------
-# AI MINDMAP GENERATOR (GROQ)
-# -------------------------------
-
-GROQ_API_KEY = "YOUR_GROQ_API_KEY_HERE"   # <-- Replace this
+# MINDMAP STORAGE (NO AI)
 
 @anvil.server.callable
-def generate_mindmap(subject, subtopic, branch, grade):
+def save_mindmap(title, nodes):
+  row = app_tables.mindmaps.get(title=title)
+  if row:
+    row['nodes'] = nodes
+    row['updated'] = datetime.now()
+  else:
+    app_tables.mindmaps.add_row(
+      title=title,
+      nodes=nodes,
+      created=datetime.now(),
+      updated=datetime.now()
+    )
+  return "saved"
 
-  prompt = f"""
-Create a full educational mindmap for:
+@anvil.server.callable
+def load_mindmap(title):
+  row = app_tables.mindmaps.get(title=title)
+  if row:
+    return row['nodes']
+  return None
 
-Subject: {subject}
-Sub-topic: {subtopic}
-Branch: {branch}
-Grade/Year: {grade}
-
-The mindmap must include:
-
-- Main topic
-- 3 major subtopics
-- 3 branches under each subtopic
-- Definitions
-- Examples
-- Prerequisites
-- Overview
-- Key diagrams (describe them)
-- Real-world applications
-- A clean structured layout
-
-Format it clearly using headings and bullet points.
-"""
-
-  url = "https://api.groq.com/openai/v1/chat/completions"
-
-  headers = {
-    "Content-Type": "application/json",
-    "Authorization": f"Bearer {GROQ_API_KEY}"
-  }
-
-  data = {
-    "model": "llama3-70b-8192",
-    "messages": [
-      {"role": "user", "content": prompt}
-    ]
-  }
-
-  response = requests.post(url, headers=headers, data=json.dumps(data))
-  result = response.json()
-
-  if "choices" not in result:
-    return f"⚠️ Groq Error:\n\n{json.dumps(result, indent=2)}"
-
-  return result["choices"][0]["message"]["content"]
+@anvil.server.callable
+def list_mindmaps():
+  return [r['title'] for r in app_tables.mindmaps.search()]

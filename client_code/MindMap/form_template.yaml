@@ -61,10 +61,6 @@ components:
       name: grade_box
       properties: {role: outlined}
       type: TextBox
-    - layout_properties: {grid_position: 'AEVDIW,NOUFAB'}
-      name: mindmap_output
-      properties: {}
-      type: Label
     - layout_properties: {grid_position: 'CPPEWC,EFQEPG'}
       name: generate_button
       properties: {role: outlined-button, text: Generate Mindmap}
