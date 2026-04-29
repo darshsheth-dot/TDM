@@ -3,7 +3,7 @@ components:
   - components:
     - layout_properties: {grid_position: 'RGCKYM,NBXBNU'}
       name: label_2
-      properties: {align: center, background: '#3CC7CC ', bold: true, font: Anton, font_size: 35, text: Wake up determined with..., underline: true}
+      properties: {align: center, background: '#3CC7CC ', bold: true, font: Anton, font_size: 35, text: 1 Min Math Sprint, underline: true}
       type: Label
     layout_properties: {grid_position: 'YYFYCL,JMKREU'}
     name: outlined_card_1
@@ -14,37 +14,90 @@ components:
       spacing:
         margin: [null, null, null, null]
     type: ColumnPanel
-  - components:
-    - layout_properties: {grid_position: 'LBQTIP,PRIRRT'}
-      name: image_3
-      properties: {background: '#3CC7CC ', source: _/theme/Screenshot 2026-04-28 234539.png}
-      type: Image
-    layout_properties: {grid_position: 'SVYUZW,FPRYDL XXFEXB,TZNDKW'}
-    name: outlined_card_2
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
-    type: ColumnPanel
-  - layout_properties: {grid_position: 'SVYUZW,FPRYDL XRXBPT,FVRBSK'}
+  - layout_properties: {grid_position: 'SVYUZW,FPRYDL'}
     name: spacer_4
     properties: {height: '2'}
     type: Spacer
-  - components:
-    - layout_properties: {grid_position: 'BFFRNQ,JLYHIJ'}
-      name: image_4
-      properties: {background: '#3CC7CC ', source: _/theme/Screenshot 2026-04-28 234813.png}
-      type: Image
-    layout_properties: {grid_position: 'SVYUZW,OAYXHX HZAXUJ,ADOZIL'}
-    name: outlined_card_3
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
-    type: ColumnPanel
   - layout_properties: {grid_position: 'SVYUZW,OAYXHX GAXTNB,ORMOHC'}
     name: spacer_5
     properties: {height: '2'}
     type: Spacer
   - components:
-    - layout_properties: {grid_position: 'PWFYAY,INHCDX'}
-      name: image_5
-      properties: {background: '#3CC7CC ', source: _/theme/Screenshot 2026-04-28 235244.png}
-      type: Image
+    - layout_properties: {grid_position: ''}
+      name: navbar_links_2
+      properties: {}
+      type: FlowPanel
+    - components:
+      - layout_properties: {grid_position: 'SZDYLA,HRYMWR'}
+        name: label_3
+        properties: {text: '1. Simplify 7x - 3x. '}
+        type: Label
+      - layout_properties: {grid_position: 'HLZSXO,BEYKOF'}
+        name: text_box_1
+        properties: {}
+        type: TextBox
+      - layout_properties: {grid_position: 'YZMCDR,IKQMZG'}
+        name: label_q1
+        properties: {}
+        type: Label
+      - layout_properties: {grid_position: 'STVEDP,BGCPTE'}
+        name: label_4
+        properties: {text: 2. Find the area of a triangle with base 12 cm and height 5 cm.}
+        type: Label
+      - layout_properties: {grid_position: 'KBVIJS,NHEJHR'}
+        name: text_box_3
+        properties: {}
+        type: TextBox
+      - layout_properties: {grid_position: 'SNPBEU,ECUUSP'}
+        name: label_q2
+        properties: {}
+        type: Label
+      - layout_properties: {grid_position: 'OOZRBR,KKEMCZ'}
+        name: label_5
+        properties: {text: 3. A right‑angled triangle has legs 6 cm and 8 cm. Find the hypotenuse.}
+        type: Label
+      - layout_properties: {grid_position: 'JYXIMP,FTQAEF'}
+        name: text_box_2
+        properties: {}
+        type: TextBox
+      - layout_properties: {grid_position: 'JELQJA,VBGIWB'}
+        name: label_q3
+        properties: {}
+        type: Label
+      - layout_properties: {grid_position: 'LGCYZH,GUKDJR'}
+        name: label_6
+        properties: {text: '4. A bag has 4 red and 6 blue counters. What is the probability of picking a red?'}
+        type: Label
+      - layout_properties: {grid_position: 'DRBORO,EFWJQX'}
+        name: text_box_4
+        properties: {}
+        type: TextBox
+      - layout_properties: {grid_position: 'QPSUEA,PVAZPC'}
+        name: label_q4
+        properties: {}
+        type: Label
+      - layout_properties: {grid_position: 'XAFWVH,DXSLEN'}
+        name: label_7
+        properties: {text: 5. Convert 3.2 km into metres.}
+        type: Label
+      - layout_properties: {grid_position: 'YLFORK,KRCUWT'}
+        name: text_box_5
+        properties: {}
+        type: TextBox
+      - layout_properties: {grid_position: 'ZUMVJY,FVPOJO'}
+        name: label_q5
+        properties: {}
+        type: Label
+      layout_properties: {grid_position: ''}
+      name: content_panel_2
+      properties:
+        spacing:
+          margin: [null, null, null, 85]
+      type: ColumnPanel
+    - layout_properties: {grid_position: 'YQWHWW,ZYWQND'}
+      name: button_1
+      properties: {background: '#010101', foreground: '#3CC7CC', text: Submit}
+      type: Button
     layout_properties: {grid_position: 'KQWHAG,MWIKAI'}
     name: outlined_card_4
     properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
