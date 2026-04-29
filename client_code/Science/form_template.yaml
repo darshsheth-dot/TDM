@@ -30,12 +30,13 @@ components:
             name: label_3
             properties: {font_size: 23, text: 'Methyl Orange is a known indicator to measure potential hydrogen in chemicals. True or False?'}
             type: Label
-          layout_properties: {grid_position: 'WUSWAF,CWAAFB'}
+          layout_properties: {grid_position: 'LYBCYP,BWBYOZ'}
           name: outlined_card_2
           properties:
             role: outlined-card
             spacing:
               margin: [null, null, 39, 78]
+              padding: [null, '100', null, 82]
           type: ColumnPanel
         - event_bindings: {}
           layout_properties: {grid_position: 'CMTUPD,HJRCBB'}
