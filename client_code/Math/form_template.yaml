@@ -24,7 +24,7 @@ components:
     type: Spacer
   - components:
     - components:
-      - layout_properties: {grid_position: 'RDEZRL,AZVRLL'}
+      - layout_properties: {grid_position: 'OBGZJD,TLHFOH'}
         name: label_8
         properties: {align: center, background: '#3CC7CC ', bold: true, font: Anton, font_size: 14, text: No Units Required, underline: true}
         type: Label
@@ -38,7 +38,7 @@ components:
         type: TextBox
       - layout_properties: {grid_position: 'YZMCDR,IKQMZG'}
         name: label_q1
-        properties: {}
+        properties: {align: center}
         type: Label
       - layout_properties: {grid_position: 'STVEDP,BGCPTE'}
         name: label_4
@@ -50,7 +50,7 @@ components:
         type: TextBox
       - layout_properties: {grid_position: 'SNPBEU,ECUUSP'}
         name: label_q2
-        properties: {}
+        properties: {align: center}
         type: Label
       - layout_properties: {grid_position: 'OOZRBR,KKEMCZ'}
         name: label_5
@@ -62,7 +62,7 @@ components:
         type: TextBox
       - layout_properties: {grid_position: 'JELQJA,VBGIWB'}
         name: label_q3
-        properties: {}
+        properties: {align: center}
         type: Label
       - layout_properties: {grid_position: 'LGCYZH,GUKDJR'}
         name: label_6
@@ -74,7 +74,7 @@ components:
         type: TextBox
       - layout_properties: {grid_position: 'QPSUEA,PVAZPC'}
         name: label_q4
-        properties: {}
+        properties: {align: center}
         type: Label
       - layout_properties: {grid_position: 'XAFWVH,DXSLEN'}
         name: label_7
@@ -86,7 +86,7 @@ components:
         type: TextBox
       - layout_properties: {grid_position: 'ZUMVJY,FVPOJO'}
         name: label_q5
-        properties: {}
+        properties: {align: center}
         type: Label
       layout_properties: {grid_position: ''}
       name: content_panel_2

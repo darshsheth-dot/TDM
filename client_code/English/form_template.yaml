@@ -42,7 +42,7 @@ components:
         type: TextBox
       - layout_properties: {grid_position: 'RGNWYI,WCPLYF'}
         name: result_label
-        properties: {font_size: 20}
+        properties: {align: center, font_size: 20}
         type: Label
       layout_properties: {grid_position: ''}
       name: content_panel_2
