@@ -41,6 +41,6 @@ class English(EnglishTemplate):
 
     # Display feedback + example
     self.result_label.text = (
-      "Nice sentence, here is an example sentence:\n\n" + example_sentence
+      "Nice sentence, here is an example:\n\n" + example_sentence
     )
     self.result_label.foreground = "blue"
