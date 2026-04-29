@@ -40,7 +40,7 @@ class Math(MathTemplate):
       "text_box_2": "30",     # Q2: 1/2 × 12 × 5
       "text_box_3": "10",     # Q3: hypotenuse of 6 and 8
       "text_box_4": "0.4",    # Q4: 4/10
-      "text_box_5": "3200"    # Q5: 3.2 km → 3200 m
+      "text_box_5": "3200"    # Q5: 3.2 km → 3200m
     }
 
     # Labels for feedback
