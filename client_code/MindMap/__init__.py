@@ -1,15 +1,21 @@
 from ._anvil_designer import MindMapTemplate
 from anvil import *
 import anvil.server
-import anvil.tables as tables
-import anvil.tables.query as q
-from anvil.tables import app_tables
-
 
 class MindMap(MindMapTemplate):
+
   def __init__(self, **properties):
     self.init_components(**properties)
 
+    # This will store all nodes as dictionaries
+    self.nodes = []
+
+    # Load saved mindmap titles into dropdown
+    self._refresh_mindmap_list()
+
+  # -------------------------------
+  # NAVIGATION BUTTONS
+  # -------------------------------
   @handle("Dashboard_button", "click")
   def Dashboard_button_click(self, **event_args):
     open_form('Dashboard')
@@ -26,25 +32,103 @@ class MindMap(MindMapTemplate):
   def blok_button_click(self, **event_args):
     open_form('Blok')
 
-  # ---------------------------------------------------
-  # GENERATE MINMAP USING AI
-  # ---------------------------------------------------
-  @handle("generate_button", "click")
-  def generate_button_click(self, **event_args):
+  # -------------------------------
+  # LOAD LIST OF SAVED MINDMAPS
+  # -------------------------------
+  def _refresh_mindmap_list(self):
+    titles = anvil.server.call('list_mindmaps')
+    self.mindmap_dropdown.items = titles
 
-    subject = self.subject_box.text
-    subtopic = self.subtopic_box.text
-    branch = self.branch_box.text
-    grade = self.grade_box.text
+  # -------------------------------
+  # NEW MINDMAP
+  # -------------------------------
+  @handle("new_button", "click")
+  def new_button_click(self, **event_args):
+    self.title_box.text = ""
+    self.nodes = []
+    self.nodes_panel.clear()
 
-    # Call the AI on the server
-    mindmap_text = anvil.server.call(
-      "generate_mindmap",
-      subject,
-      subtopic,
-      branch,
-      grade
-    )
+  # -------------------------------
+  # ADD NODE
+  # -------------------------------
+  def add_node_button_click(self, **event_args):
+    node = {
+      "id": f"node_{len(self.nodes)+1}",
+      "title": "New Node",
+      "notes": "",
+    }
 
-    # Display the mindmap
-    self.mindmap_output.text = mindmap_text
+    self.nodes.append(node)
+    self._render_nodes()
+
+  # -------------------------------
+  # RENDER ALL NODES
+  # -------------------------------
+  def _render_nodes(self):
+    self.nodes_panel.clear()
+
+    for node in self.nodes:
+      card = ColumnPanel(role="card", spacing="small")
+
+      title_box = TextBox(text=node["title"], placeholder="Node title")
+      notes_area = TextArea(text=node["notes"], placeholder="Notes...")
+
+      delete_btn = Button(text="Delete Node", role="danger")
+
+      # Update title
+      def update_title(tb, n=node, **e):
+        n["title"] = tb.text
+
+      # Update notes
+      def update_notes(ta, n=node, **e):
+        n["notes"] = ta.text
+
+      # Delete node
+      def delete_node(btn, n=node, **e):
+        self.nodes.remove(n)
+        self._render_nodes()
+
+      title_box.set_event_handler("change", update_title)
+      notes_area.set_event_handler("change", update_notes)
+      delete_btn.set_event_handler("click", delete_node)
+
+      card.add_component(Label(text=node["id"], bold=True))
+      card.add_component(title_box)
+      card.add_component(notes_area)
+      card.add_component(delete_btn)
+
+      self.nodes_panel.add_component(card)
+
+  # -------------------------------
+  # SAVE MINDMAP
+  # -------------------------------
+  def save_button_click(self, **event_args):
+    title = self.title_box.text
+
+    if not title:
+      alert("Please enter a title before saving.")
+      return
+
+    anvil.server.call('save_mindmap', title, self.nodes)
+    alert("Mindmap saved successfully.")
+    self._refresh_mindmap_list()
+
+  # -------------------------------
+  # LOAD MINDMAP
+  # -------------------------------
+  def load_button_click(self, **event_args):
+    title = self.mindmap_dropdown.selected_value
+
+    if not title:
+      alert("Please select a mindmap to load.")
+      return
+
+    nodes = anvil.server.call('load_mindmap', title)
+
+    if nodes is None:
+      alert("Mindmap not found.")
+      return
+
+    self.title_box.text = title
+    self.nodes = nodes
+    self._render_nodes()
