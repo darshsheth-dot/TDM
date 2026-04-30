@@ -133,6 +133,10 @@ components:
       text: |
         ⏱   Blok
     type: Button
+  - layout_properties: {grid_position: 'XTGNKT,YHMCVD'}
+    name: feedback_form_button
+    properties: {align: left, font_size: 15, foreground: 'theme:On Primary', text: Feedback Form}
+    type: Button
   - layout_properties: {grid_position: 'MORCBD,OLLNBG'}
     name: spacer_3
     properties: {height: '5'}
