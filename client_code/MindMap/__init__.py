@@ -42,7 +42,6 @@ class MindMap(MindMapTemplate):
   # -------------------------------
   # NEW MINDMAP
   # -------------------------------
-  @handle("new_button", "click")
   def new_button_click(self, **event_args):
     self.title_box.text = ""
     self.nodes = []
