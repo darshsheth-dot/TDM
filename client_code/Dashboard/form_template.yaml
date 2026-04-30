@@ -137,23 +137,19 @@ components:
         padding: [null, 153, null, null]
       text: Routine
     type: Button
+  - layout_properties: {grid_position: 'MGGWMR,XMCLCA'}
+    name: blok_button
+    properties:
+      align: left
+      font_size: 15
+      foreground: theme:On Secondary
+      text: |
+        ⏱   Blok
+    type: Button
   - layout_properties: {grid_position: 'MORCBD,OLLNBG'}
     name: spacer_3
     properties: {height: '5'}
     type: Spacer
-  - event_bindings: {}
-    layout_properties: {full_width_row: true, grid_position: 'GEPDID,NZBGFO', row_background: '#000000'}
-    name: blok_button
-    properties:
-      background: '#000000'
-      font_size: 15
-      foreground: '#FFFFFF'
-      icon: fa:ban
-      role: filled-button
-      spacing:
-        padding: [null, 172, null, null]
-      text: Blok
-    type: Button
   layout_properties: {slot: left-nav}
   name: column_panel_1
   properties:

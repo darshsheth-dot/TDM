@@ -28,10 +28,7 @@ class Dashboard(DashboardTemplate):
     """This method is called when the button is clicked"""
     open_form('Routine')
 
-  @handle("blok_button", "click")
-  def blok_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form('Blok')
+
 
   @handle("Math", "click")
   def Math_click(self, **event_args):
@@ -47,3 +44,8 @@ class Dashboard(DashboardTemplate):
   def English_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('English')
+
+  @handle("blok_button", "click")
+  def blok_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('Blok')
