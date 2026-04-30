@@ -23,11 +23,6 @@ class Dashboard(DashboardTemplate):
     """This method is called when the button is clicked"""
     open_form('MindMap')
 
-  @handle("routine_button", "click")
-  def routine_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form('Routine')
-
 
 
   @handle("Math", "click")
@@ -45,7 +40,3 @@ class Dashboard(DashboardTemplate):
     """This method is called when the button is clicked"""
     open_form('English')
 
-  @handle("blok_button", "click")
-  def blok_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form('Blok')
