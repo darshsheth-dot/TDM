@@ -45,3 +45,8 @@ class Dashboard(DashboardTemplate):
     """This method is called when the button is clicked"""
     open_form('Fback_Form')
 
+  @handle("", "refreshing_data_bindings")
+  def form_refreshing_data_bindings(self, **event_args):
+    """This method is called when refresh_data_bindings is called"""
+    pass  # Write Code Here
+
