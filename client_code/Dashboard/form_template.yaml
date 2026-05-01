@@ -73,97 +73,23 @@ components:
   properties:
     background: '#1B5886'
     spacing:
-      padding: [null, null, 29, null]
+      padding: [null, null, 29, 14]
   type: ColumnPanel
 - layout_properties: {slot: nav-right}
   name: navbar_links
   properties: {}
   type: FlowPanel
-- components:
-  - layout_properties: {grid_position: 'LOGGVA,NDXXHR'}
-    name: image_1
-    properties: {height: 130, source: _/theme/dboard logo.png}
-    type: Image
-  - layout_properties: {grid_position: 'YMOZIH,CPTHZO'}
-    name: title_label
-    properties: {bold: true, font: Lato, font_size: 25, foreground: '#FFFFFF', text: The DAILY Mentor}
-    type: Label
-  - data_bindings:
-    - {code: 'self.item['''']', property: border, writeback: false}
-    event_bindings: {}
-    layout_properties: {full_width_row: true, grid_position: 'SGDUMT,NVXJZV', row_background: '#3CC7CC '}
-    name: Dashboard_button
-    properties:
-      align: right
-      background: '#3CC7CC '
-      bold: false
-      font_size: 15
-      foreground: '#FFFFFF'
-      icon: fa:archive
-      icon_align: left
-      role: filled-button
-      spacing:
-        margin: [null, null, null, 0]
-        padding: [null, 137, null, 0]
-      text: Dashboard
-    type: Button
-  - layout_properties: {grid_position: 'UACDCY,SZHSIA'}
-    name: spacer_1
-    properties: {height: '5'}
-    type: Spacer
-  - event_bindings: {}
-    layout_properties: {full_width_row: true, grid_position: 'PFETRG,KUGECG', row_background: '#000000 '}
-    name: mindmap_button
-    properties:
-      background: '#000000'
-      font_size: 15
-      foreground: '#FFFFFF'
-      icon: fa:android
-      role: filled-button
-      spacing:
-        margin: [null, null, null, 0]
-        padding: [null, 122, null, 4]
-      text: MindMap
-    type: Button
-  - layout_properties: {grid_position: 'FBOSNP,JIOVHI'}
-    name: spacer_2
-    properties: {height: '5'}
-    type: Spacer
-  - layout_properties: {grid_position: 'MORCBD,OLLNBG'}
-    name: spacer_3
-    properties: {height: '5'}
-    type: Spacer
-  - data_bindings:
-    - {code: 'self.item['''']', property: border, writeback: false}
-    layout_properties: {grid_position: 'MORCBD,SUJVGG'}
-    name: blok_button_2
-    properties:
-      background: '#000000'
-      border: ''
-      font_size: 15
-      foreground: '#FFFFFF'
-      icon: fa:ban
-      role: filled-button
-      spacing:
-        margin: [null, 0, null, 0]
-        padding: [null, 172, null, null]
-      text: Blok
-    type: Button
-  layout_properties: {slot: left-nav}
-  name: column_panel_1
-  properties:
-    background: '#000000'
-    col_spacing: huge
-    role: null
-    spacing:
-      margin: [null, null, 0, null]
-      padding: [null, null, 356, null]
-    spacing_below: none
-  type: ColumnPanel
 - layout_properties: {slot: title}
   name: label_1
   properties: {text: TDM}
   type: Label
+- layout_properties: {slot: left-nav}
+  name: column_panel_1
+  properties:
+    background: '#000000'
+    spacing:
+      padding: [null, '50', '600', 218]
+  type: ColumnPanel
 container:
   properties: {border: '2', html: '@theme:standard-page.html'}
   type: HtmlTemplate

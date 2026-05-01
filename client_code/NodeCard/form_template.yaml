@@ -3,12 +3,8 @@ components:
   - components:
     - layout_properties: {grid_position: 'RGCKYM,NBXBNU'}
       name: label_2
-      properties: {align: center, background: '#3CC7CC ', bold: true, font: Anton, font_size: 35, text: Wake up determined with..., underline: true}
+      properties: {align: center, background: '#3CC7CC ', bold: true, font: Anton, font_size: 35, text: Mindmap Creator, underline: true}
       type: Label
-    - layout_properties: {grid_position: 'HWBVKH,OPDQGP'}
-      name: image_2
-      properties: {source: _/theme/Screenshot 2026-04-28 232236.png}
-      type: Image
     layout_properties: {grid_position: 'YYFYCL,JMKREU'}
     name: outlined_card_1
     properties:
@@ -18,49 +14,27 @@ components:
       spacing:
         margin: [null, null, null, null]
     type: ColumnPanel
-  - components:
-    - layout_properties: {grid_position: 'XQUNIX,KLMVLJ'}
-      name: timer_label
-      properties: {}
-      type: Label
-    - layout_properties: {grid_position: 'QJCRPN,ZWOSBT'}
-      name: progress_label
-      properties: {}
-      type: Label
-    layout_properties: {grid_position: 'SVYUZW,FPRYDL XXFEXB,TZNDKW'}
-    name: outlined_card_2
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
-    type: ColumnPanel
   - layout_properties: {grid_position: 'SVYUZW,FPRYDL XRXBPT,FVRBSK'}
     name: spacer_4
     properties: {height: '2'}
     type: Spacer
-  - components:
-    - layout_properties: {grid_position: 'WBCZBS,RAFLGY'}
-      name: start_pause_button
-      properties: {role: outlined-button, text: Start}
-      type: Button
-    - layout_properties: {grid_position: 'RQGEJW,TNXLYT'}
-      name: reset_button
-      properties: {role: outlined-button, text: Reset}
-      type: Button
-    - layout_properties: {grid_position: 'CKNJIZ,VAHBYC'}
-      name: duration_box
-      properties: {role: outlined}
-      type: TextBox
-    layout_properties: {grid_position: 'SVYUZW,OAYXHX HZAXUJ,ADOZIL'}
-    name: outlined_card_3
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
-    type: ColumnPanel
-  - layout_properties: {grid_position: 'SVYUZW,OAYXHX GAXTNB,ORMOHC'}
+  - layout_properties: {grid_position: 'SVYUZW,OAYXHX'}
     name: spacer_5
     properties: {height: '2'}
     type: Spacer
-  - components: []
+  - components:
+    - layout_properties: {grid_position: 'BFBOXN,BQCKEI'}
+      name: title_box
+      properties: {align: center, font_size: 19, role: outlined}
+      type: TextBox
     layout_properties: {grid_position: 'KQWHAG,MWIKAI'}
     name: outlined_card_4
     properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
     type: ColumnPanel
+  - layout_properties: {grid_position: 'FAMYPO,VTOARM'}
+    name: delete_button
+    properties: {align: right, background: '#3cc', role: outlined-button, text: Delete}
+    type: Button
   layout_properties: {slot: default}
   name: content_panel
   properties: {background: '#1B5886'}
@@ -80,7 +54,6 @@ components:
     type: Label
   - data_bindings:
     - {code: 'self.item['''']', property: border, writeback: false}
-    event_bindings: {}
     layout_properties: {full_width_row: true, grid_position: 'SGDUMT,NVXJZV', row_background: '#3CC7CC '}
     name: Dashboard_button
     properties:
@@ -100,8 +73,7 @@ components:
     name: spacer_1
     properties: {height: '5'}
     type: Spacer
-  - event_bindings: {}
-    layout_properties: {full_width_row: true, grid_position: 'PFETRG,KUGECG', row_background: '#000000 '}
+  - layout_properties: {full_width_row: true, grid_position: 'PFETRG,KUGECG', row_background: '#000000 '}
     name: mindmap_button
     properties:
       background: '#000000'
@@ -117,19 +89,34 @@ components:
     name: spacer_2
     properties: {height: '5'}
     type: Spacer
-  - layout_properties: {grid_position: 'MGGWMR,XMCLCA'}
-    name: blok_button
+  - layout_properties: {full_width_row: true, grid_position: 'EGDBIL,XNPTCC'}
+    name: routine_button
     properties:
-      align: left
+      background: '#000000'
       font_size: 15
-      foreground: theme:On Secondary
-      text: |
-        ⏱   Blok
+      foreground: '#FFFFFF'
+      icon: fa:bars
+      role: filled-button
+      spacing:
+        padding: [null, 153, null, null]
+      text: Routine
     type: Button
   - layout_properties: {grid_position: 'MORCBD,OLLNBG'}
     name: spacer_3
     properties: {height: '5'}
     type: Spacer
+  - layout_properties: {full_width_row: true, grid_position: 'GEPDID,NZBGFO', row_background: '#000000'}
+    name: blok_button
+    properties:
+      background: '#000000'
+      font_size: 15
+      foreground: '#FFFFFF'
+      icon: fa:ban
+      role: filled-button
+      spacing:
+        padding: [null, 172, null, null]
+      text: Blok
+    type: Button
   layout_properties: {slot: left-nav}
   name: column_panel_1
   properties:
