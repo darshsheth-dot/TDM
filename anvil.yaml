@@ -2,7 +2,7 @@ allow_embedding: false
 correct_dependency_ids: {}
 db_schema:
   articles:
-    client: none
+    client: search
     columns:
     - admin_ui: {width: 200}
       name: title
@@ -33,6 +33,84 @@ db_schema:
       type: string
     server: full
     title: Categories
+  feedback:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: name
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: email
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: feedback
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: created
+      type: datetime
+    indexes: []
+    server: full
+    title: Feedback
+  mindmaps:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: title
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: nodes
+      type: simpleObject
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: created
+      type: datetime
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: updated
+      type: datetime
+    indexes: []
+    server: full
+    title: mindmaps
+  users:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      client_hidden: null
+      name: email
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: null
+      name: enabled
+      type: bool
+    - admin_ui: {width: 200}
+      client_hidden: null
+      name: last_login
+      type: datetime
+    - admin_ui: {width: 200}
+      client_hidden: null
+      name: password_hash
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: null
+      name: n_password_failures
+      type: number
+    - admin_ui: {width: 200}
+      client_hidden: null
+      name: confirmed_email
+      type: bool
+    - admin_ui: {width: 200}
+      client_hidden: null
+      name: signed_up
+      type: datetime
+    indexes: []
+    server: full
+    title: Users
 dependencies: []
 metadata: {description: '', title: The Daily Mentor}
 name: Syon, Darsh, Ishaan
@@ -51,5 +129,5 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/anvil/email.yml
-startup: {module: Login, type: form}
+startup: {module: Fback_Form, type: form}
 startup_form: null
