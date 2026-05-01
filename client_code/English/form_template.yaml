@@ -24,19 +24,20 @@ components:
     type: Spacer
   - components:
     - components:
-      - layout_properties: {grid_position: 'NIVETH,KPNFVP'}
+      - layout_properties: {grid_position: 'WXCKIF,KCLOIX'}
+        name: word_label
+        properties: {font_size: 20, text: Anthropomorphism (noun)}
+        type: Label
+      - layout_properties: {grid_position: 'VMNLZF,BCFRFA'}
+        name: definition_label
+        properties: {align: left, font_size: 20, text: 'Definition: The attribution of human characteristics or behaviour to a god, animal, or object.'}
+        type: Label
+      - layout_properties: {grid_position: 'VUASUW,YAHBED'}
         name: label_3
-        properties:
-          font_size: 21
-          spacing:
-            margin: [null, null, null, 75]
-          text: |
-            Anthropomorphism (noun)
-            Definition: The attribution of human characteristics or behaviour to a god, animal, or object.
-            Use the word on your own in a sentence.
+        properties: {text: 'Write your sentence here: '}
         type: Label
       - layout_properties: {grid_position: 'RGDMYT,ZSBMLQ'}
-        name: text_box_1
+        name: sentence_box
         properties:
           margin: [null, null, null, 56]
         type: TextBox
@@ -56,6 +57,14 @@ components:
     name: outlined_card_4
     properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
     type: ColumnPanel
+  - layout_properties: {grid_position: 'GCFHHQ,AIYCFV'}
+    name: back_button
+    properties: {align: left, background: '#3cc', role: outlined-button, text: Back}
+    type: Button
+  - layout_properties: {grid_position: 'GCFHHQ,ZHOWCE'}
+    name: next_button
+    properties: {align: right, background: '#3cc', role: outlined-button, text: Next}
+    type: Button
   layout_properties: {slot: default}
   name: content_panel
   properties: {background: '#1B5886'}

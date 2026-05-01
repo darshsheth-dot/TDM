@@ -9,8 +9,29 @@ from anvil.tables import app_tables
 class English(EnglishTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
-    # Any code you write here will run when the form opens.
 
+    # -----------------------------
+    # WORDS + DEFINITIONS + EXAMPLES
+    # -----------------------------
+    self.words = [
+      {
+        "word": "Anthropomorphism (noun)",
+        "definition": "The attribution of human characteristics or behaviour to a god, animal, or object.",
+        "example": "Disney movies often use anthropomorphism by giving animals human emotions."
+      },
+      {
+        "word": "Interdependence (noun)",
+        "definition": "A relationship where two or more organisms, systems, or factors rely on each other to function or survive.",
+        "example": "Plants and animals show interdependence because they rely on each other for oxygen and carbon dioxide."
+      }
+    ]
+
+    self.current_index = 0
+    self._load_word()
+
+  # -----------------------------
+  # SIDEBAR NAVIGATION
+  # -----------------------------
   @handle("Dashboard_button", "click")
   def Dashboard_button_click(self, **event_args):
     open_form("Dashboard")
@@ -27,20 +48,49 @@ class English(EnglishTemplate):
   def blok_button_click(self, **event_args):
     open_form("Blok")
 
-  # ---------------------------------------------------
-  # SUBMIT BUTTON — GIVE EXAMPLE SENTENCE
-  # ---------------------------------------------------
+  # -----------------------------
+  # LOAD WORD + DEFINITION
+  # -----------------------------
+  def _load_word(self):
+    w = self.words[self.current_index]
+    self.word_label.text = w["word"]
+    self.definition_label.text = w["definition"]
 
+    # Clear previous results
+    self.result_label.text = ""
+    self.sentence_box.text = ""
+
+    # Show/hide navigation buttons
+    self.back_button.visible = self.current_index > 0
+    self.next_button.visible = self.current_index < len(self.words) - 1
+
+  # -----------------------------
+  # SUBMIT BUTTON — SHOW EXAMPLE SENTENCE
+  # -----------------------------
   @handle("submit_button", "click")
   def submit_button_click(self, **event_args):
+    w = self.words[self.current_index]
+    example_sentence = w["example"]
 
-    # Example sentence for the word of the day
-    example_sentence = (
-      "The author’s clever use of anthropomorphism allowed the grumpy old grandfather clock to lecture the children about wasting their time."
-    )
-
-    # Display feedback + example
     self.result_label.text = (
-      "Nice sentence, here is an example:\n\n" + example_sentence
+      "Nice try, here is an example sentence:\n\n" + example_sentence
     )
     self.result_label.foreground = "blue"
+
+  # -----------------------------
+  # NEXT BUTTON
+  # -----------------------------
+  @handle("next_button", "click")
+  def next_button_click(self, **event_args):
+    if self.current_index < len(self.words) - 1:
+      self.current_index += 1
+      self._load_word()
+
+  # -----------------------------
+  # BACK BUTTON
+  # -----------------------------
+  @handle("back_button", "click")
+  def back_button_click(self, **event_args):
+    if self.current_index > 0:
+      self.current_index -= 1
+      self._load_word()
