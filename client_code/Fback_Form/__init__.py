@@ -22,7 +22,7 @@ class Fback_Form(Fback_FormTemplate):
     Notification("Feedback submitted!").show()
     # Call your 'clear_inputs' method to clear the boxes
     def clear_inputs(self):
-    # Clear our three text boxes
+      # Clear our three text boxes
       self.name_box.text = ""
     self.email_box.text = ""
     self.feedback_box.text = ""

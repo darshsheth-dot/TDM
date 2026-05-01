@@ -9,8 +9,22 @@ from anvil.tables import app_tables
 class Science(ScienceTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
-    # Any code you write here will run when the form opens.
 
+    # -----------------------------
+    # YOUR 3 QUESTIONS
+    # -----------------------------
+    self.questions = [
+      {"text": "Methyl Orange is a known indicator to measure potential hydrogen in chemicals.", "answer": False},
+      {"text": "All cells contain a cell wall to give them shape and support.", "answer": False},
+      {"text": "Sound can't travel through a vacuum, such as outer space.", "answer": True}
+    ]
+
+    self.current_index = 0
+    self._load_question()
+
+  # -----------------------------
+  # NAVIGATION BUTTONS (unchanged)
+  # -----------------------------
   @handle("Dashboard_button", "click")
   def Dashboard_button_click(self, **event_args):
     open_form("Dashboard")
@@ -28,17 +42,57 @@ class Science(ScienceTemplate):
     open_form("Blok")
 
   # -----------------------------
-  # TRUE / FALSE QUESTION LOGIC
+  # LOAD QUESTION
   # -----------------------------
+  def _load_question(self):
+    q = self.questions[self.current_index]
+    self.question_label.text = q["text"]
+    self.result_label.text = ""
 
+    # Show/hide navigation buttons
+    self.back_button.visible = self.current_index > 0
+    self.next_button.visible = self.current_index < len(self.questions) - 1
+
+  # -----------------------------
+  # TRUE BUTTON
+  # -----------------------------
   @handle("true_button", "click")
   def true_button_click(self, **event_args):
-    # Correct answer is FALSE
-    self.result_label.text = "Wrong answer, nice try"
-    self.result_label.foreground = "red"
+    correct = self.questions[self.current_index]["answer"]
+    if correct is True:
+      self.result_label.text = "Correct answer, keep it up!!!!"
+      self.result_label.foreground = "green"
+    else:
+      self.result_label.text = "Wrong answer, nice try"
+      self.result_label.foreground = "red"
 
+  # -----------------------------
+  # FALSE BUTTON
+  # -----------------------------
   @handle("false_button", "click")
   def false_button_click(self, **event_args):
-    # Correct answer is FALSE
-    self.result_label.text = "Correct answer, keep it up!!!!"
-    self.result_label.foreground = "green"
+    correct = self.questions[self.current_index]["answer"]
+    if correct is False:
+      self.result_label.text = "Correct answer, keep it up!!!!"
+      self.result_label.foreground = "green"
+    else:
+      self.result_label.text = "Wrong answer, nice try"
+      self.result_label.foreground = "red"
+
+  # -----------------------------
+  # NEXT BUTTON
+  # -----------------------------
+  @handle("next_button", "click")
+  def next_button_click(self, **event_args):
+    if self.current_index < len(self.questions) - 1:
+      self.current_index += 1
+      self._load_question()
+
+  # -----------------------------
+  # BACK BUTTON
+  # -----------------------------
+  @handle("back_button", "click")
+  def back_button_click(self, **event_args):
+    if self.current_index > 0:
+      self.current_index -= 1
+      self._load_question()

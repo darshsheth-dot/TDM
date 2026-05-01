@@ -15,7 +15,7 @@ def add_feedback(name, email, feedback):
   )
 
   anvil.email.send(
-    to="ishaan.sarin@education.nsw.gov.au",
+    to="darsh.sheth@education.nsw.gov.au",
     subject=f"Feedback from {name}",
     text=f"""
 A new person has filled out the feedback form!
