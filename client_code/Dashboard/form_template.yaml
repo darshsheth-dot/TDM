@@ -144,13 +144,6 @@ components:
         padding: [null, 47, null, 0]
       text: Blok
     type: Button
-  - layout_properties: {grid_position: 'XHSYKO,LGQFXH'}
-    name: Mindmap
-    properties:
-      role: outlined-button
-      text: |
-        Mindmap
-    type: Button
   - layout_properties: {grid_position: 'SALSYX,SDMLQE'}
     name: spacer_8
     properties: {height: '5'}
