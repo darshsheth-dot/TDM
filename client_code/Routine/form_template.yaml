@@ -109,7 +109,6 @@ components:
       background: '#000000'
       foreground: '#FFFFFF'
       icon: fa:android
-      role: filled-button
       spacing:
         padding: [null, 31, null, 11]
       text: Mindmap
@@ -124,7 +123,6 @@ components:
       background: '#000000'
       foreground: '#FFFFFF'
       icon: fa:align-justify
-      role: filled-button
       spacing:
         padding: [null, 33, null, 5]
       text: Routine
@@ -139,17 +137,9 @@ components:
       background: '#000000'
       foreground: '#FFFFFF'
       icon: fa:ban
-      role: filled-button
       spacing:
         padding: [null, 47, null, 0]
       text: Blok
-    type: Button
-  - layout_properties: {grid_position: 'XHSYKO,LGQFXH'}
-    name: Mindmap
-    properties:
-      role: outlined-button
-      text: |
-        Mindmap
     type: Button
   - layout_properties: {grid_position: 'SALSYX,SDMLQE'}
     name: spacer_8
