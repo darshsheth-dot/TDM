@@ -12,6 +12,7 @@ class MindMap(MindMapTemplate):
     # ---------------------------
     # NEW MINDMAP
     # ---------------------------
+  @handle("new_button", "click")
   def new_button_click(self, **event_args):
     self.title_box.text = ""
     self.nodes_panel.clear()
@@ -19,6 +20,7 @@ class MindMap(MindMapTemplate):
     # ---------------------------
     # ADD NODE
     # ---------------------------
+  @handle("add_node_button", "click")
   def add_node_button_click(self, **event_args):
     node_id = str(uuid.uuid4())
     card = NodeCard(node_id=node_id, title="", notes="")
@@ -42,6 +44,7 @@ class MindMap(MindMapTemplate):
     # ---------------------------
     # LOAD MINDMAP
     # ---------------------------
+  @handle("load_button", "click")
   def load_button_click(self, **event_args):
     title = self.mindmap_dropdown.selected_value
     if not title:

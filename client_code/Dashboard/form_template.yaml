@@ -83,13 +83,14 @@ components:
   name: label_1
   properties: {text: TDM}
   type: Label
-- layout_properties: {slot: left-nav}
-  name: column_panel_1
-  properties:
-    background: '#000000'
-    spacing:
-      padding: [null, '50', '600', 218]
-  type: ColumnPanel
+- components:
+  - name: outlined_button_1
+    properties: {role: outlined-button, text: outlined_button_1}
+    type: Button
+  layout_properties: {slot: left-nav}
+  name: linear_panel_1
+  properties: {}
+  type: LinearPanel
 container:
   properties: {border: '2', html: '@theme:standard-page.html'}
   type: HtmlTemplate
