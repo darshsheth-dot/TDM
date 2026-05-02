@@ -1,52 +1,127 @@
 from ._anvil_designer import FocusModeTemplate
 from anvil import *
-import anvil.google.auth, anvil.google.drive
-from anvil.google.drive import app_files
-import anvil.users
-import anvil.server
-import anvil.tables as tables
-import anvil.tables.query as q
-from anvil.tables import app_tables
+import anvil.js
 
 class FocusMode(FocusModeTemplate):
-  def __init__(self, minutes=25, blocked_apps=[], **properties):
+  def __init__(self, minutes=25, blocked_apps=[], music_choice="Focus", **properties):
     self.init_components(**properties)
+
+    # Store values
     self.total_seconds = minutes * 60
     self.remaining = self.total_seconds
     self.running = True
-    self.apps_label.text = "Blocked Apps:\n" + "\n".join(["• " + app for app in blocked_apps])
-    self.update_display()
-    self.timer_1.interval = 1
+    self.music_choice = music_choice
 
+    # Show blocked apps
+    self.apps_label.text = "Blocked Apps:\n" + "\n".join(["• " + app for app in blocked_apps])
+
+    # Insert hidden audio player
+    self.audio_panel.content = """
+    <audio id="bgm" loop>
+      <source src="" type="audio/mpeg">
+    </audio>
+    """
+
+    # Set the correct music file
+    self._set_music()
+
+    # Update timer display
+    self.update_display()
+
+    # Timer settings
+    self.timer_1.interval = 1
+    self.timer_1.enabled = True
+
+    # Start music immediately
+    anvil.js.call_js("document.getElementById('bgm').play()")
+
+  # ---------------------------------------------------
+  # SET MUSIC FILE
+  # ---------------------------------------------------
+  def _set_music(self):
+    if self.music_choice == "Focus":
+      src = "_/theme/focus.mp3"
+    elif self.music_choice == "Chill":
+      src = "_/theme/chill.mp3"
+    else:
+      src = "_/theme/peaceful.mp3"
+
+    js = f"""
+    var audio = document.getElementById('bgm');
+    audio.src = '{src}';
+    """
+    anvil.js.call_js(js)
+
+  # ---------------------------------------------------
+  # UPDATE TIMER DISPLAY
+  # ---------------------------------------------------
   def update_display(self):
     mins = self.remaining // 60
     secs = self.remaining % 60
     self.timer_label.text = f"{mins:02d}:{secs:02d}"
 
+  # ---------------------------------------------------
+  # TIMER TICK
+  # ---------------------------------------------------
   @handle("timer_1", "tick")
   def timer_1_tick(self, **event_args):
     if self.running and self.remaining > 0:
       self.remaining -= 1
       self.update_display()
+
     elif self.remaining == 0:
-      self.timer_1.interval = 0
+      self.running = False
+      self.timer_1.enabled = False
+
+      # Stop music
+      anvil.js.call_js("""
+      var audio = document.getElementById('bgm');
+      audio.pause();
+      audio.currentTime = 0;
+      """)
+
       alert("Focus session complete! Great work! 🎉")
       open_form('Dashboard')
 
+  # ---------------------------------------------------
+  # PAUSE / RESUME
+  # ---------------------------------------------------
   @handle("pause_button", "click")
   def pause_button_click(self, **event_args):
     if self.running:
       self.running = False
       self.pause_button.text = "Resume"
+
+      # Pause music
+      anvil.js.call_js("document.getElementById('bgm').pause()")
+
     else:
       self.running = True
       self.pause_button.text = "Pause"
 
+      # Resume music
+      anvil.js.call_js("document.getElementById('bgm').play()")
+
+  # ---------------------------------------------------
+  # END SESSION
+  # ---------------------------------------------------
   @handle("end_button", "click")
   def end_button_click(self, **event_args):
-    self.timer_1.interval = 0
+    self.running = False
+    self.timer_1.enabled = False
+
+    # Stop music
+    anvil.js.call_js("""
+    var audio = document.getElementById('bgm');
+    audio.pause();
+    audio.currentTime = 0;
+    """)
+
     open_form('Blok')
 
+  # ---------------------------------------------------
+  # SIDEBAR NAVIGATION
+  # ---------------------------------------------------
   @handle("Dashboard_button", "click")
   def Dashboard_button_click(self, **event_args):
     open_form('Dashboard')
@@ -62,7 +137,3 @@ class FocusMode(FocusModeTemplate):
   @handle("blok_button", "click")
   def blok_button_click(self, **event_args):
     open_form('Blok')
-
-  @handle("", "hide")
-  def form_hide(self, **event_args):
-    pass
