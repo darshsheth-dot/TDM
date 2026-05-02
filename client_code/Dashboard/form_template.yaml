@@ -184,7 +184,13 @@ components:
     type: Button
   - layout_properties: {grid_position: 'DVWKSJ,LNJRVL'}
     name: button_1
-    properties: {text: Flashcards}
+    properties:
+      background: '#000000'
+      foreground: '#FFFFFF'
+      icon: fa:clone
+      spacing:
+        padding: [null, null, null, 24]
+      text: Flashcards
     type: Button
   layout_properties: {slot: left-nav}
   name: column_panel_1
@@ -194,7 +200,7 @@ components:
     role: null
     spacing:
       margin: [null, null, 0, null]
-      padding: [null, null, 277, null]
+      padding: [null, null, 347, null]
     spacing_below: none
   type: ColumnPanel
 - layout_properties: {slot: title}

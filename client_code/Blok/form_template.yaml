@@ -42,6 +42,22 @@ components:
         foreground: '#FFFFFF'
         items: [25 minutes, 30 minutes, 45 minutes, 60 minutes, '']
       type: DropDown
+    - layout_properties: {grid_position: 'GJMBIR,MTDUJW'}
+      name: choose_music
+      properties:
+        align: center
+        bold: true
+        font: Anton
+        font_size: 20
+        text: |
+          Choose Music
+      type: Label
+    - data_bindings: []
+      layout_properties: {grid_position: 'NNOIRP,XPRKVQ'}
+      name: music_dropdown
+      properties:
+        items: [Chill, Focus, Peaceful, '']
+      type: DropDown
     layout_properties: {grid_position: 'SVYUZW,FPRYDL CSUMVW,RQZXBX'}
     name: timer_card
     properties:
@@ -107,23 +123,6 @@ components:
     name: play_button
     properties: {background: '#3CC7CC ', font_size: 83, foreground: '#FFFFFF', role: outlined-button, text: ▶️}
     type: Button
-  - components:
-    - layout_properties: {grid_position: 'LDYTVS,MCNVIP'}
-      name: timer_2
-      properties: {align: center, bold: true, font: Anton, font_size: 20, text: 'Choose Music:'}
-      type: Label
-    layout_properties: {grid_position: 'SOGAEF,ZGLUII'}
-    name: timer_card_2
-    properties:
-      background: '#3CC7CC '
-      role: tonal-card
-      spacing:
-        padding: [null, null, null, 12]
-    type: ColumnPanel
-  - layout_properties: {grid_position: 'RQNUKY,QHPDJO'}
-    name: music_dropdown
-    properties: {}
-    type: DropDown
   - layout_properties: {grid_position: 'OKPGNX,OKYBML'}
     name: audio_panel
     properties: {}
