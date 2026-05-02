@@ -124,9 +124,12 @@ components:
       properties: {align: center, background: '#3CC7CC ', bold: true, font: Anton, font_size: 14, text: No Units Required, underline: true}
       type: Label
     - components:
-      - layout_properties: {grid_position: 'SZDYLA,HRYMWR'}
+      - layout_properties: {grid_position: 'XTWFRC,HIGUUJ'}
         name: label_3
-        properties: {text: '1. Simplify 7x - 3x. '}
+        properties:
+          spacing:
+            padding: [null, 228, null, 0]
+          text: '1. Simplify 7x - 3x. '
         type: Label
       - layout_properties: {grid_position: 'HLZSXO,BEYKOF'}
         name: text_box_1
@@ -196,7 +199,12 @@ components:
       type: Button
     layout_properties: {grid_position: 'KQWHAG,MWIKAI'}
     name: outlined_card_4
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
+    properties:
+      background: '#3CC7CC '
+      border: 1px solid black
+      role: outlined-card
+      spacing:
+        padding: [null, 106, null, 0]
     type: ColumnPanel
   layout_properties: {slot: default}
   name: content_panel_2

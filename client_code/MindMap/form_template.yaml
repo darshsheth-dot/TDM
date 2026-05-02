@@ -71,7 +71,10 @@ components:
     type: ColumnPanel
   layout_properties: {slot: default}
   name: content_panel
-  properties: {background: '#1B5886'}
+  properties:
+    background: '#1B5886'
+    spacing:
+      padding: [null, null, 13, null]
   type: ColumnPanel
 - layout_properties: {slot: nav-right}
   name: navbar_links

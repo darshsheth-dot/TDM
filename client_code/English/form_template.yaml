@@ -132,10 +132,10 @@ components:
         name: label_3
         properties: {text: 'Write your sentence here: '}
         type: Label
-      - layout_properties: {grid_position: 'RGDMYT,ZSBMLQ'}
+      - layout_properties: {grid_position: 'CQCXBS,FGVIJR'}
         name: sentence_box
         properties:
-          margin: [null, null, null, 56]
+          margin: [null, 0, null, 0]
         type: TextBox
       - layout_properties: {grid_position: 'RGNWYI,WCPLYF'}
         name: result_label
@@ -163,7 +163,10 @@ components:
     type: Button
   layout_properties: {slot: default}
   name: content_panel_2
-  properties: {background: '#1B5886'}
+  properties:
+    background: '#1B5886'
+    spacing:
+      padding: [null, null, 150, null]
   type: ColumnPanel
 container:
   properties: {border: '2', html: '@theme:standard-page.html'}

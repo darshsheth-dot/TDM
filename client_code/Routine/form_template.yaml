@@ -18,36 +18,20 @@ components:
       spacing:
         margin: [null, null, null, null]
     type: ColumnPanel
-  - components: []
-    layout_properties: {grid_position: 'SVYUZW,FPRYDL XXFEXB,TZNDKW'}
-    name: outlined_card_2
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
-    type: ColumnPanel
-  - layout_properties: {grid_position: 'SVYUZW,FPRYDL XRXBPT,FVRBSK'}
+  - layout_properties: {grid_position: 'SVYUZW,FPRYDL TWCLCG,TIGTGI'}
     name: spacer_4
     properties: {height: '2'}
     type: Spacer
-  - components: []
-    layout_properties: {grid_position: 'SVYUZW,OAYXHX HZAXUJ,ADOZIL'}
-    name: outlined_card_3
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
-    type: ColumnPanel
-  - layout_properties: {grid_position: 'SVYUZW,OAYXHX GAXTNB,ORMOHC'}
+  - layout_properties: {grid_position: 'SVYUZW,OAYXHX'}
     name: spacer_5
     properties: {height: '2'}
     type: Spacer
-  - components:
-    - layout_properties: {grid_position: 'PWFYAY,INHCDX'}
-      name: image_5
-      properties: {background: '#3CC7CC ', source: _/theme/Screenshot 2026-04-28 235244.png}
-      type: Image
-    layout_properties: {grid_position: 'KQWHAG,MWIKAI'}
-    name: outlined_card_4
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
-    type: ColumnPanel
   layout_properties: {slot: default}
   name: content_panel
-  properties: {background: '#1B5886'}
+  properties:
+    background: '#1B5886'
+    spacing:
+      padding: [null, null, 379, null]
   type: ColumnPanel
 - layout_properties: {slot: nav-right}
   name: navbar_links
