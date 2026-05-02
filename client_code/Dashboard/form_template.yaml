@@ -175,11 +175,16 @@ components:
     name: feedback_button
     properties:
       background: '#000000'
+      font_size: 15
       foreground: '#FFFFFF'
       icon: fa:address-book-o
       spacing:
-        padding: [null, 80, null, 0]
+        padding: [null, 80, null, 7]
       text: Feedback Form
+    type: Button
+  - layout_properties: {grid_position: 'DVWKSJ,LNJRVL'}
+    name: button_1
+    properties: {text: Flashcards}
     type: Button
   layout_properties: {slot: left-nav}
   name: column_panel_1
