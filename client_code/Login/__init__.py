@@ -1,6 +1,7 @@
 from ._anvil_designer import LoginTemplate
 from anvil import *
 import anvil.server
+import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
@@ -21,11 +22,11 @@ class Login(LoginTemplate):
 
     self.error_label2.visible = False
 
-    if not password:
-      alert("Please fill in all fields.")
-      return
-
-    open_form('Dashboard')
+    try:
+      anvil.users.login_with_email(email, password)
+      open_form('Dashboard')
+    except Exception as e:
+      alert("Incorrect email or password. Please try again!")
 
   @handle("sign_in_page_button", "click")
   def sign_in_page_button_click(self, **event_args):
@@ -33,5 +34,4 @@ class Login(LoginTemplate):
 
   @handle("", "hide")
   def form_hide(self, **event_args):
-    """This method is called when the form is removed from the page"""
     pass

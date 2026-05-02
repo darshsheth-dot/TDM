@@ -23,11 +23,7 @@ components:
     properties: {height: '2'}
     type: Spacer
   - components:
-    - components:
-      - layout_properties: {pinned: true}
-        name: repeating_panel_1
-        properties: {item_template: Routine.RowTemplate1}
-        type: RepeatingPanel
+    - components: []
       layout_properties: {grid_position: 'MAQUTE,JBASUE'}
       name: routine_grid
       properties:
