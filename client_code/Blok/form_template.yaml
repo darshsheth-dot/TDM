@@ -19,7 +19,7 @@ components:
     properties: {height: '2'}
     type: Spacer
   - layout_properties: {grid_position: 'SVYUZW,FPRYDL MVCPTB,FGHGMH'}
-    name: image_2
+    name: timer_image
     properties:
       display_mode: fill_width
       height: 313
@@ -43,7 +43,7 @@ components:
         items: [25 minutes, 30 minutes, 45 minutes, 60 minutes, '']
       type: DropDown
     layout_properties: {grid_position: 'SVYUZW,FPRYDL CSUMVW,RQZXBX'}
-    name: outlined_card_2
+    name: timer_card
     properties:
       background: '#3CC7CC '
       role: tonal-card
@@ -54,14 +54,59 @@ components:
     name: spacer_5
     properties: {height: '2'}
     type: Spacer
-  - layout_properties: {grid_position: 'SVYUZW,OAYXHX UYJVIY,RZDNWZ'}
+  - components:
+    - layout_properties: {grid_position: 'QNIHGB,UTSEOI'}
+      name: label_3
+      properties: {align: center, font: Anton, font_size: 25, text: 'Blocking:'}
+      type: Label
+    - layout_properties: {grid_position: 'JZKWMJ,THRZFW'}
+      name: tiktok_check
+      properties:
+        spacing:
+          padding: [null, null, null, 48]
+        text: TikTok
+      type: CheckBox
+    - layout_properties: {grid_position: 'OWLHDL,WBTMYI'}
+      name: snapchat_check
+      properties:
+        spacing:
+          padding: [null, null, null, 48]
+        text: Snapchat
+      type: CheckBox
+    - layout_properties: {grid_position: 'TNNMWH,KZHUKN'}
+      name: instagram_check
+      properties:
+        spacing:
+          padding: [null, null, null, 48]
+        text: Instagram
+      type: CheckBox
+    - layout_properties: {grid_position: 'MTMVAN,STJUWH'}
+      name: youtube_check
+      properties:
+        spacing:
+          padding: [null, null, null, 48]
+        text: Youtube
+      type: CheckBox
+    - layout_properties: {grid_position: 'FNGZCO,AOTGNW'}
+      name: google_check
+      properties:
+        spacing:
+          padding: [null, null, null, 48]
+        text: Google
+      type: CheckBox
+    layout_properties: {grid_position: 'SVYUZW,OAYXHX UYJVIY,RZDNWZ'}
     name: outlined_card_3
     properties:
+      background: '#3CC7CC '
       role: outlined-card
       spacing:
         margin: ['10', null, null, null]
-        padding: [null, null, null, null]
+        padding: [null, null, 39, null]
     type: ColumnPanel
+  - layout_properties: {grid_position: 'SVYUZW,OAYXHX SFNPVL,QVDSEP'}
+    name: play_button
+    properties: {background: '#3CC7CC ', font_size: 83, foreground: '#FFFFFF', role: outlined-button, text: ▶️}
+    type: Button
   layout_properties: {slot: default}
   name: content_panel
   properties:
