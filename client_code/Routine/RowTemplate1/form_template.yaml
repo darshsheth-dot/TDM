@@ -1,0 +1,27 @@
+components:
+- data_bindings:
+  - {code: 'self.item[''task_name'']', property: type, writeback: false}
+  layout_properties: {column: JKSDUP}
+  name: task_name
+  properties: {}
+  type: TextBox
+- data_bindings:
+  - {code: 'self.item[''subject_name'']', property: type, writeback: false}
+  layout_properties: {column: VJQQOR}
+  name: subject_name
+  properties: {}
+  type: TextBox
+- data_bindings:
+  - {code: 'self.item[''due_date'']', property: type, writeback: false}
+  layout_properties: {column: OJLQEN}
+  name: due_date
+  properties: {}
+  type: TextBox
+- data_bindings:
+  - {code: 'self.item[''priority'']', property: type, writeback: false}
+  layout_properties: {column: BGQXZS}
+  name: priority
+  properties: {}
+  type: TextBox
+container: {type: DataRowPanel}
+is_package: true

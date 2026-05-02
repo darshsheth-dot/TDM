@@ -65,56 +65,27 @@ def list_mindmaps():
 
 
 # ---------------------------------------------------
-# MATHS PERCENTAGE SYSTEM
+# MORNING MIND GAMES PROGRESS SYSTEM (NO LOGIN)
 # ---------------------------------------------------
 
 @anvil.server.callable
-def update_math_score(correct, total):
-  """Update the user's maths accuracy percentage."""
-  user = anvil.users.get_user()
-  if not user:
-    return 0
+def increment_progress():
+  """Increase progress count when a game is completed."""
+  row = app_tables.progress.get()
+  row['count'] += 1
+  return row['count']
 
-  # Initialise if missing
-  if user['math_correct'] is None:
-    user['math_correct'] = 0
-  if user['math_total'] is None:
-    user['math_total'] = 0
-
-  # Update totals
-  user['math_correct'] += correct
-  user['math_total'] += total
-
-  # Avoid division by zero
-  if user['math_total'] == 0:
-    return 0
-
-  return round((user['math_correct'] / user['math_total']) * 100)
-
-
-# ---------------------------------------------------
-# SCIENCE PERCENTAGE SYSTEM
-# ---------------------------------------------------
 
 @anvil.server.callable
-def update_science_score(correct, total):
-  """Update the user's science accuracy percentage."""
-  user = anvil.users.get_user()
-  if not user:
-    return 0
+def reset_progress():
+  """Reset progress back to 0 (optional)."""
+  row = app_tables.progress.get()
+  row['count'] = 0
+  return 0
 
-  # Initialise if missing
-  if user['science_correct'] is None:
-    user['science_correct'] = 0
-  if user['science_total'] is None:
-    user['science_total'] = 0
 
-  # Update totals
-  user['science_correct'] += correct
-  user['science_total'] += total
-
-  # Avoid division by zero
-  if user['science_total'] == 0:
-    return 0
-
-  return round((user['science_correct'] / user['science_total']) * 100)
+@anvil.server.callable
+def get_progress():
+  """Return the current progress count."""
+  row = app_tables.progress.get()
+  return row['count']

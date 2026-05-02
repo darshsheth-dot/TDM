@@ -10,27 +10,35 @@ class Dashboard(DashboardTemplate):
     self._load_progress()
 
   # ---------------------------------------------------
-  # LOAD MORNING MIND GAMES PROGRESS
+  # LOAD MORNING MIND GAMES PROGRESS (115 DOTS)
   # ---------------------------------------------------
   def _load_progress(self):
     count = anvil.server.call('get_progress')
 
-    # Change colour based on how many games completed
+    # 115 identical dots
+    dots = "●" * 115
+
+    # Choose colour based on progress count
     if count == 0:
-      self.progress_label.text = "●"
-      self.progress_label.foreground = "black"
-
+      colour = "black"
     elif count == 1:
-      self.progress_label.text = "●"
-      self.progress_label.foreground = "red"
-
+      colour = "red"
     elif count == 2:
-      self.progress_label.text = "●"
-      self.progress_label.foreground = "orange"
+      colour = "orange"
+    else:
+      colour = "green"
 
-    elif count >= 3:
-      self.progress_label.text = "●"
-      self.progress_label.foreground = "green"
+    # Update label
+    self.progress_label.text = dots
+    self.progress_label.foreground = colour
+
+  # ---------------------------------------------------
+  # RESET PROGRESS BUTTON
+  # ---------------------------------------------------
+  @handle("reset_button", "click")
+  def reset_button_click(self, **event_args):
+    anvil.server.call('reset_progress')
+    self._load_progress()
 
   # ---------------------------------------------------
   # SIDEBAR NAVIGATION
