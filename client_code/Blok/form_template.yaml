@@ -22,12 +22,29 @@ components:
     name: spacer_5
     properties: {height: '2'}
     type: Spacer
+  - components:
+    - layout_properties: {grid_position: 'UHJKXJ,HVEDDK'}
+      name: image_2
+      properties:
+        display_mode: fill_width
+        height: 195
+        margin: [9, 0, null, 20]
+        source: _/theme/Screenshot 2026-05-02 121904.png
+      type: Image
+    layout_properties: {grid_position: 'XBYWAR,RZAZLL'}
+    name: outlined_card_2
+    properties:
+      role: outlined-card
+      spacing:
+        margin: [null, '385', null, null]
+        padding: [null, 129, 164, null]
+    type: ColumnPanel
   layout_properties: {slot: default}
   name: content_panel
   properties:
     background: '#1B5886'
     spacing:
-      padding: [null, null, 408, null]
+      padding: [null, null, 417, null]
   type: ColumnPanel
 - layout_properties: {slot: nav-right}
   name: navbar_links
