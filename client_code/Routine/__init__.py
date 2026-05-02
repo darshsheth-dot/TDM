@@ -66,3 +66,8 @@ class Routine(RoutineTemplate):
   @handle("", "hide")
   def form_hide(self, **event_args):
     pass
+
+  @handle("routine_grid", "show")
+  def routine_grid_show(self, **event_args):
+    """This method is called when the data grid is shown on the screen"""
+    pass  # Write Code Here

@@ -14,36 +14,6 @@ components:
       spacing:
         margin: [null, null, null, null]
     type: ColumnPanel
-  - layout_properties: {grid_position: 'SVYUZW,FPRYDL'}
-    name: spacer_4
-    properties: {height: '2'}
-    type: Spacer
-  - layout_properties: {grid_position: 'SVYUZW,OAYXHX'}
-    name: spacer_5
-    properties: {height: '2'}
-    type: Spacer
-  - components:
-    - components:
-      - name: repeating_panel_1
-        properties: {item_template: Routine.RowTemplate1}
-        type: RepeatingPanel
-      layout_properties: {grid_position: 'WAOOIU,KOKGWB'}
-      name: routine_grid
-      properties:
-        columns:
-        - {data_key: column_1, id: JKSDUP, title: Task}
-        - {data_key: column_2, id: VJQQOR, title: Subject}
-        - {data_key: column_3, id: OJLQEN, title: Due Date}
-        - {data_key: column_4, id: WKSVEM, title: Priority}
-      type: DataGrid
-    layout_properties: {grid_position: 'OHUNKZ,LAHVZJ'}
-    name: outlined_card_2
-    properties: {role: outlined-card}
-    type: ColumnPanel
-  - layout_properties: {grid_position: 'AWCVQY,MBFYQZ'}
-    name: spacer_6
-    properties: {height: '15'}
-    type: Spacer
   - layout_properties: {grid_position: 'EXZDSE,YIZQIH'}
     name: add_row_button
     properties: {background: '#3CC7CC ', font_size: 30, foreground: '#000000', role: outlined-button, text: Add Task}
