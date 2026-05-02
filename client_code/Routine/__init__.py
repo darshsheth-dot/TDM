@@ -11,27 +11,28 @@ class Routine(RoutineTemplate):
     self.load_tasks()
 
   def load_tasks(self):
-    self.routine_grid.items = app_tables.tasks.search()
+    rows = list(app_tables.tasks.search())
+    self.routine_grid.items = rows
 
   @handle("add_row_button", "click")
   def add_row_button_click(self, **event_args):
     app_tables.tasks.add_row(
-      task_name="",
-      subject="",
-      due_date="",
-      priority="",
+      task_name="New Task",
+      subject="Subject",
+      due_date="DD/MM",
+      priority="High",
       username=""
     )
     self.load_tasks()
 
   @handle("remove_row_button", "click")
   def remove_row_button_click(self, **event_args):
-    selected = self.routine_grid.get_selected_row()
-    if selected:
-      selected.delete()
+    all_rows = list(app_tables.tasks.search())
+    if all_rows:
+      all_rows[-1].delete()
       self.load_tasks()
     else:
-      alert("Please select a row to remove first!")
+      alert("No tasks to remove!")
 
   @handle("generate_button", "click")
   def generate_button_click(self, **event_args):
@@ -39,13 +40,11 @@ class Routine(RoutineTemplate):
     if not tasks:
       alert("No tasks to generate a routine from!")
       return
-
     priority_order = {"High": 1, "Medium": 2, "Low": 3}
     sorted_tasks = sorted(tasks, key=lambda t: (
       priority_order.get(t["priority"], 4),
       t["due_date"] or ""
     ))
-
     open_form('GeneratedRoutine', tasks=sorted_tasks)
 
   @handle("Dashboard_button", "click")

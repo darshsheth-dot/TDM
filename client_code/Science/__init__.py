@@ -119,3 +119,4 @@ class Science(ScienceTemplate):
 
     # Show updated percentage
     self.science_percentage_label.text = f"Science Accuracy: {new_percentage}%"
+progress = anvil.server.call('increment_progress')

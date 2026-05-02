@@ -94,3 +94,4 @@ class English(EnglishTemplate):
     if self.current_index > 0:
       self.current_index -= 1
       self._load_word()
+progress = anvil.server.call('increment_progress')

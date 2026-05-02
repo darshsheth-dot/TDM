@@ -83,3 +83,4 @@ class Math(MathTemplate):
 
     # Optional: show the updated percentage on the page
     self.math_percentage_label.text = f"Math Accuracy: {new_percentage}%"
+progress = anvil.server.call('increment_progress')
