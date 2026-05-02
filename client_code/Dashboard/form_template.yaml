@@ -167,6 +167,10 @@ components:
         padding: [null, 172, null, null]
       text: Blok
     type: Button
+  - layout_properties: {grid_position: 'RHORBB,JZHCOB'}
+    name: button_1
+    properties: {text: Feedback}
+    type: Button
   layout_properties: {slot: left-nav}
   name: column_panel_1
   properties:
