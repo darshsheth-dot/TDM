@@ -138,17 +138,6 @@ components:
     name: spacer_7
     properties: {height: '5'}
     type: Spacer
-  - layout_properties: {grid_position: 'DVWKSJ,LNJRVL'}
-    name: button_1
-    properties:
-      background: '#000000'
-      font_size: 15
-      foreground: '#FFFFFF'
-      icon: fa:clone
-      spacing:
-        padding: [null, 106, null, 0]
-      text: Flashcards
-    type: Button
   layout_properties: {slot: left-nav}
   name: column_panel_1
   properties:
