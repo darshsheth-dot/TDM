@@ -76,11 +76,11 @@ components:
       background: '#000000'
       font_size: 15
       foreground: '#FFFFFF'
-      icon: fa:android
+      icon: fa:clone
       role: filled-button
       spacing:
-        padding: [null, 122, null, 4]
-      text: MindMap
+        padding: [null, 122, null, 18]
+      text: Flashcards
     type: Button
   - layout_properties: {grid_position: 'FBOSNP,JIOVHI'}
     name: spacer_2

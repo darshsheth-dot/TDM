@@ -39,7 +39,7 @@ components:
       background: '#000000'
       font_size: 15
       foreground: '#FFFFFF'
-      icon: fa:android
+      icon: fa:clone
       role: filled-button
       spacing:
         padding: [null, 122, null, 4]
