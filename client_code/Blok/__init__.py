@@ -40,4 +40,12 @@ class Blok(BlokTemplate):
     if self.instagram_check.checked:
       blocked_apps.append("Instagram")
     if self.youtube_check.checked:
-      blocked_app
+      blocked_apps.append("YouTube")
+    if self.google_check.checked:
+      blocked_apps.append("Google")
+
+    if not blocked_apps:
+      alert("Please select at least one app to block!")
+      return
+
+    open_form('FocusMode', minutes=minutes, blocked_apps=blocked_apps)
