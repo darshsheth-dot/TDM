@@ -58,10 +58,6 @@ components:
       properties:
         items: [Chill, Focus, Peaceful, '']
       type: DropDown
-    - layout_properties: {grid_position: 'BNHXDY,RXBOZW'}
-      name: audio_panel
-      properties: {}
-      type: RichText
     layout_properties: {grid_position: 'SVYUZW,FPRYDL CSUMVW,RQZXBX'}
     name: timer_card
     properties:

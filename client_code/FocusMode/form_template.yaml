@@ -24,6 +24,10 @@ components:
     name: end_button
     properties: {background: '#3CC7CC ', font_size: 83, foreground: '#000000', role: outlined-button, text: End}
     type: Button
+  - layout_properties: {grid_position: 'JADWPI,JOSLLA'}
+    name: audio_panel
+    properties: {}
+    type: RichText
   layout_properties: {slot: default}
   name: content_panel
   properties:
