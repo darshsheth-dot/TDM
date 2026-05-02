@@ -6,34 +6,32 @@ class FocusMode(FocusModeTemplate):
   def __init__(self, minutes=25, blocked_apps=[], music_choice="Focus", **properties):
     self.init_components(**properties)
 
-    # Store values
     self.total_seconds = minutes * 60
     self.remaining = self.total_seconds
     self.running = True
     self.music_choice = music_choice
 
-    # Show blocked apps
     self.apps_label.text = "Blocked Apps:\n" + "\n".join(["• " + app for app in blocked_apps])
 
-    # Insert hidden audio player
-    self.audio_panel.content = """
-    <audio id="bgm" loop>
-      <source src="" type="audio/mpeg">
-    </audio>
-    """
-
-    # Set the correct music file
-    self._set_music()
-
-    # Update timer display
     self.update_display()
 
-    # Timer settings
     self.timer_1.interval = 1
     self.timer_1.enabled = True
 
-    # Start music immediately
-    anvil.js.call_js("document.getElementById('bgm').play()")
+  # ---------------------------------------------------
+  # RUNS ONLY AFTER UI IS FULLY LOADED
+  # ---------------------------------------------------
+  def form_show(self, **event_args):
+    # Insert audio element AFTER render
+    self.audio_panel.content = """
+    <audio id="bgm" loop></audio>
+    """
+
+    # Now the element exists → safe to set music
+    self._set_music()
+
+    # Start music
+    anvil.js.call_js("eval", "document.getElementById('bgm').play()")
 
   # ---------------------------------------------------
   # SET MUSIC FILE
@@ -46,23 +44,17 @@ class FocusMode(FocusModeTemplate):
     else:
       src = "_/theme/peaceful.mp3"
 
-    js = f"""
-    var audio = document.getElementById('bgm');
-    audio.src = '{src}';
-    """
-    anvil.js.call_js(js)
+    js = f"document.getElementById('bgm').src = '{src}'"
+    anvil.js.call_js("eval", js)
 
   # ---------------------------------------------------
-  # UPDATE TIMER DISPLAY
+  # UPDATE TIMER
   # ---------------------------------------------------
   def update_display(self):
     mins = self.remaining // 60
     secs = self.remaining % 60
     self.timer_label.text = f"{mins:02d}:{secs:02d}"
 
-  # ---------------------------------------------------
-  # TIMER TICK
-  # ---------------------------------------------------
   @handle("timer_1", "tick")
   def timer_1_tick(self, **event_args):
     if self.running and self.remaining > 0:
@@ -73,12 +65,7 @@ class FocusMode(FocusModeTemplate):
       self.running = False
       self.timer_1.enabled = False
 
-      # Stop music
-      anvil.js.call_js("""
-      var audio = document.getElementById('bgm');
-      audio.pause();
-      audio.currentTime = 0;
-      """)
+      anvil.js.call_js("eval", "var a=document.getElementById('bgm'); a.pause(); a.currentTime=0")
 
       alert("Focus session complete! Great work! 🎉")
       open_form('Dashboard')
@@ -91,16 +78,11 @@ class FocusMode(FocusModeTemplate):
     if self.running:
       self.running = False
       self.pause_button.text = "Resume"
-
-      # Pause music
-      anvil.js.call_js("document.getElementById('bgm').pause()")
-
+      anvil.js.call_js("eval", "document.getElementById('bgm').pause()")
     else:
       self.running = True
       self.pause_button.text = "Pause"
-
-      # Resume music
-      anvil.js.call_js("document.getElementById('bgm').play()")
+      anvil.js.call_js("eval", "document.getElementById('bgm').play()")
 
   # ---------------------------------------------------
   # END SESSION
@@ -110,17 +92,12 @@ class FocusMode(FocusModeTemplate):
     self.running = False
     self.timer_1.enabled = False
 
-    # Stop music
-    anvil.js.call_js("""
-    var audio = document.getElementById('bgm');
-    audio.pause();
-    audio.currentTime = 0;
-    """)
+    anvil.js.call_js("eval", "var a=document.getElementById('bgm'); a.pause(); a.currentTime=0")
 
     open_form('Blok')
 
   # ---------------------------------------------------
-  # SIDEBAR NAVIGATION
+  # NAVIGATION
   # ---------------------------------------------------
   @handle("Dashboard_button", "click")
   def Dashboard_button_click(self, **event_args):
