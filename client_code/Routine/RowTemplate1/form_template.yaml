@@ -1,24 +1,24 @@
 components:
 - data_bindings:
-  - {code: 'self.item[''task_name'']', property: type, writeback: false}
+  - {code: 'self.item[''task_name'']', property: text, writeback: true}
   layout_properties: {column: JKSDUP}
   name: task_name
   properties: {}
   type: TextBox
 - data_bindings:
-  - {code: 'self.item[''subject_name'']', property: type, writeback: false}
+  - {code: 'self.item[''subject_name'']', property: text, writeback: true}
   layout_properties: {column: VJQQOR}
   name: subject_name
   properties: {}
   type: TextBox
 - data_bindings:
-  - {code: 'self.item[''due_date'']', property: type, writeback: false}
+  - {code: 'self.item[''due_date'']', property: text, writeback: true}
   layout_properties: {column: OJLQEN}
   name: due_date
   properties: {}
   type: TextBox
 - data_bindings:
-  - {code: 'self.item[''priority'']', property: type, writeback: false}
+  - {code: 'self.item[''priority'']', property: text, writeback: true}
   layout_properties: {column: BGQXZS}
   name: priority
   properties: {}

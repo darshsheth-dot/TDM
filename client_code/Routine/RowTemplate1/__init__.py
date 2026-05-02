@@ -5,20 +5,6 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 
-
 class RowTemplate1(RowTemplate1Template):
   def __init__(self, **properties):
-    # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
-    # Any code you write here will run before the form opens.
-
-  @handle("", "show")
-  def form_show(self, **event_args):
-    """This method is called when the form is shown on the page"""
-    pass  # Write Code Here
-
-  @handle("subject_name", "pressed_enter")
-  def subject_name_pressed_enter(self, **event_args):
-    """This method is called when the user presses Enter in this text box"""
-    pass  # Write Code Here
