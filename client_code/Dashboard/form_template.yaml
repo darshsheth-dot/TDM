@@ -186,10 +186,11 @@ components:
     name: button_1
     properties:
       background: '#000000'
+      font_size: 15
       foreground: '#FFFFFF'
       icon: fa:clone
       spacing:
-        padding: [null, null, null, 24]
+        padding: [null, 106, null, 0]
       text: Flashcards
     type: Button
   layout_properties: {slot: left-nav}
