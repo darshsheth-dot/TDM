@@ -9,7 +9,10 @@ from anvil.tables import app_tables
 class Math(MathTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
-    # Any code you write here will run when the form opens.
+
+  # ---------------------------------------------------
+  # SIDEBAR NAVIGATION
+  # ---------------------------------------------------
 
   @handle("Dashboard_button", "click")
   def Dashboard_button_click(self, **event_args):
@@ -28,7 +31,7 @@ class Math(MathTemplate):
     open_form("Blok")
 
   # ---------------------------------------------------
-  # SUBMIT BUTTON — CHECK ALL 5 ANSWERS
+  # SUBMIT BUTTON — CHECK ALL 5 ANSWERS + SEND SCORE
   # ---------------------------------------------------
 
   @handle("submit_button", "click")
@@ -52,6 +55,10 @@ class Math(MathTemplate):
       "text_box_5": self.label_q5
     }
 
+    # Count correct answers
+    correct_count = 0
+    total_questions = len(correct_answers)
+
     # Check each answer
     for box_name, correct in correct_answers.items():
       user_answer = getattr(self, box_name).text.strip().lower()
@@ -60,6 +67,19 @@ class Math(MathTemplate):
       if user_answer == correct:
         label.text = "Correct answer, keep it up!!!!"
         label.foreground = "green"
+        correct_count += 1
       else:
         label.text = "Wrong answer, nice try"
         label.foreground = "red"
+
+    # ---------------------------------------------------
+    # SEND SCORE TO SERVER FOR PERCENTAGE TRACKING
+    # ---------------------------------------------------
+    new_percentage = anvil.server.call(
+      "update_math_score",
+      correct_count,
+      total_questions
+    )
+
+    # Optional: show the updated percentage on the page
+    self.math_percentage_label.text = f"Math Accuracy: {new_percentage}%"

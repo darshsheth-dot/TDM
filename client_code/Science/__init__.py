@@ -20,10 +20,11 @@ class Science(ScienceTemplate):
     ]
 
     self.current_index = 0
+    self.correct_count = 0   # Track correct answers
     self._load_question()
 
   # -----------------------------
-  # NAVIGATION BUTTONS (unchanged)
+  # NAVIGATION BUTTONS
   # -----------------------------
   @handle("Dashboard_button", "click")
   def Dashboard_button_click(self, **event_args):
@@ -62,6 +63,7 @@ class Science(ScienceTemplate):
     if correct is True:
       self.result_label.text = "Correct answer, keep it up!!!!"
       self.result_label.foreground = "green"
+      self.correct_count += 1
     else:
       self.result_label.text = "Wrong answer, nice try"
       self.result_label.foreground = "red"
@@ -75,6 +77,7 @@ class Science(ScienceTemplate):
     if correct is False:
       self.result_label.text = "Correct answer, keep it up!!!!"
       self.result_label.foreground = "green"
+      self.correct_count += 1
     else:
       self.result_label.text = "Wrong answer, nice try"
       self.result_label.foreground = "red"
@@ -84,9 +87,12 @@ class Science(ScienceTemplate):
   # -----------------------------
   @handle("next_button", "click")
   def next_button_click(self, **event_args):
-    if self.current_index < len(self.questions) - 1:
-      self.current_index += 1
-      self._load_question()
+    # If moving to the last question → after answering it, send score
+    if self.current_index == len(self.questions) - 1:
+      return
+
+    self.current_index += 1
+    self._load_question()
 
   # -----------------------------
   # BACK BUTTON
@@ -96,3 +102,20 @@ class Science(ScienceTemplate):
     if self.current_index > 0:
       self.current_index -= 1
       self._load_question()
+
+  # -----------------------------
+  # FINISH BUTTON (OPTIONAL)
+  # -----------------------------
+  @handle("finish_button", "click")
+  def finish_button_click(self, **event_args):
+    total_questions = len(self.questions)
+
+    # Send score to server
+    new_percentage = anvil.server.call(
+      "update_science_score",
+      self.correct_count,
+      total_questions
+    )
+
+    # Show updated percentage
+    self.science_percentage_label.text = f"Science Accuracy: {new_percentage}%"
