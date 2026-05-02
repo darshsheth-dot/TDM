@@ -33,6 +33,138 @@ db_schema:
       type: string
     server: full
     title: Categories
+  feedback:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: name
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: email
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: feedback
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: created
+      type: datetime
+    indexes: []
+    server: full
+    title: Feedback
+  math:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: math_correct
+      type: number
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: math_total
+      type: number
+    indexes: []
+    server: full
+    title: Math
+  mindmaps:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: title
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: nodes
+      type: simpleObject
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: created
+      type: datetime
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: updated
+      type: datetime
+    indexes: []
+    server: full
+    title: mindmaps
+  science:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: science_correct
+      type: number
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: science_total
+      type: number
+    indexes: []
+    server: full
+    title: Science
+  tasks:
+    client: full
+    columns:
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: task_name
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: subject
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: due_date
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: priority
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: false
+      name: username
+      type: string
+    indexes: []
+    server: full
+    title: tasks
+  users:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      client_hidden: null
+      name: email
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: null
+      name: enabled
+      type: bool
+    - admin_ui: {width: 200}
+      client_hidden: null
+      name: last_login
+      type: datetime
+    - admin_ui: {width: 200}
+      client_hidden: null
+      name: password_hash
+      type: string
+    - admin_ui: {width: 200}
+      client_hidden: null
+      name: n_password_failures
+      type: number
+    - admin_ui: {width: 200}
+      client_hidden: null
+      name: confirmed_email
+      type: bool
+    - admin_ui: {width: 200}
+      client_hidden: null
+      name: signed_up
+      type: datetime
+    indexes: []
+    server: full
+    title: Users
 dependencies: []
 metadata: {description: '', title: The Daily Mentor}
 name: Syon, Darsh, Ishaan

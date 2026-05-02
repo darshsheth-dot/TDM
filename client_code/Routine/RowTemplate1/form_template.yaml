@@ -1,3 +1,19 @@
-components: []
+components:
+- layout_properties: {column: JKSDUP}
+  name: task_input
+  properties: {}
+  type: TextBox
+- layout_properties: {column: VJQQOR}
+  name: subject_input
+  properties: {}
+  type: TextBox
+- layout_properties: {column: OJLQEN}
+  name: date_input
+  properties: {}
+  type: TextBox
+- layout_properties: {column: WKSVEM}
+  name: priority_input
+  properties: {}
+  type: TextBox
 container: {type: DataRowPanel}
 is_package: true
