@@ -7,17 +7,21 @@ class Blok(BlokTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
 
-    # Timer options
+    # -----------------------------
+    # TIMER OPTIONS
+    # -----------------------------
     self.timer_dropdown.items = ["25 minutes", "30 minutes", "45 minutes", "60 minutes"]
     self.timer_dropdown.selected_value = "25 minutes"
 
-    # Music options (for when we add the audio system)
-    self.music_dropdown.items = ["Music 1", "Music 2", "Music 3"]
-    self.music_dropdown.selected_value = "Music 1"
+    # -----------------------------
+    # MUSIC OPTIONS (YOUR NAMES)
+    # -----------------------------
+    self.music_dropdown.items = ["Focus", "Chill", "Peaceful"]
+    self.music_dropdown.selected_value = "Focus"
 
-  # ---------------------------------------------------
+  # -----------------------------
   # SIDEBAR NAVIGATION
-  # ---------------------------------------------------
+  # -----------------------------
   @handle("Dashboard_button", "click")
   def Dashboard_button_click(self, **event_args):
     open_form('Dashboard')
@@ -34,9 +38,9 @@ class Blok(BlokTemplate):
   def blok_button_click(self, **event_args):
     open_form('Blok')
 
-  # ---------------------------------------------------
-  # START BUTTON → GO TO FOCUS MODE
-  # ---------------------------------------------------
+  # -----------------------------
+  # PLAY BUTTON → GO TO FOCUS MODE
+  # -----------------------------
   @handle("play_button", "click")
   def play_button_click(self, **event_args):
     selected_time = self.timer_dropdown.selected_value
@@ -59,7 +63,7 @@ class Blok(BlokTemplate):
       alert("Please select at least one app to block!")
       return
 
-    # Pass music choice + timer + blocked apps to FocusMode
+    # Pass timer, blocked apps, and music choice to FocusMode
     open_form(
       'FocusMode',
       minutes=minutes,

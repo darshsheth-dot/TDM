@@ -12,7 +12,7 @@ components:
       type: Label
     - layout_properties: {grid_position: 'XUSUGD,LZWMJP IMNWFK,WXEMIB'}
       name: label_2
-      properties: {align: center, foreground: '#3cc', italic: true, text: The Daily Mentor}
+      properties: {align: center, font_size: 15, foreground: '#3cc', italic: true, text: The Daily Mentor}
       type: Label
     layout_properties: {grid_position: 'RDGFLO,JTDLQL'}
     name: column_panel_1
