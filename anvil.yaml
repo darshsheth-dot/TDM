@@ -148,6 +148,10 @@ db_schema:
       client_hidden: true
       name: remembered_logins
       type: simpleObject
+    - admin_ui: {}
+      client_hidden: null
+      name: email_confirmation_key
+      type: string
     indexes: []
     server: full
     title: Users
