@@ -63,7 +63,7 @@ class Dashboard(DashboardTemplate):
     open_form('Blok')
 
   @handle("feedback_button", "click")
-    def blok_button_click(self, **event_args):
+  def feedback_button_click(self, **event_args):
       open_form('Fback_Form')
 
   # ---------------------------------------------------
