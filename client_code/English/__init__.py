@@ -39,8 +39,8 @@ class English(EnglishTemplate):
   def Dashboard_button_click(self, **event_args):
     open_form("Dashboard")
 
-  @handle("mindmap_button", "click")
-  def mindmap_button_click(self, **event_args):
+  @handle("flashcard_button", "click")
+  def flashcard_button_click(self, **event_args):
     open_form("MindMap")
 
   @handle("routine_button", "click")

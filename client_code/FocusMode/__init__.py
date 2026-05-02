@@ -103,8 +103,8 @@ class FocusMode(FocusModeTemplate):
   def Dashboard_button_click(self, **event_args):
     open_form('Dashboard')
 
-  @handle("mindmap_button", "click")
-  def mindmap_button_click(self, **event_args):
+  @handle("flashcards_button", "click")
+  def flashcards_button_click(self, **event_args):
     open_form('MindMap')
 
   @handle("routine_button", "click")
