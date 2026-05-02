@@ -12,27 +12,48 @@ class Routine(RoutineTemplate):
 
   def load_tasks(self):
     rows = list(app_tables.tasks.search())
-    self.routine_grid.items = rows
+    if not rows:
+      self.tasks_display.text = "No tasks yet. Click 'Add Task' to begin!"
+      return
+    output = ""
+    for i, row in enumerate(rows, 1):
+      output += f"{i}. {row['task_name']} | {row['subject']} | Due: {row['due_date']} | {row['priority']}\n"
+    self.tasks_display.text = output
 
   @handle("add_row_button", "click")
   def add_row_button_click(self, **event_args):
+    task = ask("Enter task name:")
+    if task is None: return
+    subject = ask("Enter subject:")
+    if subject is None: return
+    due_date = ask("Enter due date (DD/MM):")
+    if due_date is None: return
+    priority = ask("Enter priority (High / Medium / Low):")
+    if priority is None: return
     app_tables.tasks.add_row(
-      task_name="New Task",
-      subject="Subject",
-      due_date="DD/MM",
-      priority="High",
+      task_name=task,
+      subject=subject,
+      due_date=due_date,
+      priority=priority,
       username=""
     )
     self.load_tasks()
 
   @handle("remove_row_button", "click")
   def remove_row_button_click(self, **event_args):
-    all_rows = list(app_tables.tasks.search())
-    if all_rows:
-      all_rows[-1].delete()
-      self.load_tasks()
-    else:
+    rows = list(app_tables.tasks.search())
+    if not rows:
       alert("No tasks to remove!")
+      return
+    task_names = [r["task_name"] for r in rows]
+    to_remove = ask("Enter task name to remove:\n" + "\n".join(task_names))
+    if to_remove is None: return
+    for row in rows:
+      if row["task_name"].lower() == to_remove.lower():
+        row.delete()
+        self.load_tasks()
+        return
+    alert("Task not found!")
 
   @handle("generate_button", "click")
   def generate_button_click(self, **event_args):
@@ -66,8 +87,3 @@ class Routine(RoutineTemplate):
   @handle("", "hide")
   def form_hide(self, **event_args):
     pass
-
-  @handle("routine_grid", "show")
-  def routine_grid_show(self, **event_args):
-    """This method is called when the data grid is shown on the screen"""
-    pass  # Write Code Here
