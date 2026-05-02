@@ -1,5 +1,7 @@
 from ._anvil_designer import SigninTemplate
 from anvil import *
+import anvil.google.auth, anvil.google.drive
+from anvil.google.drive import app_files
 import anvil.server
 import anvil.users
 import anvil.tables as tables
@@ -15,7 +17,7 @@ class Signin(SigninTemplate):
   def sign_in_button_click(self, **event_args):
     email = self.email_enter.text.strip()
     password = self.password_enter.text.strip()
-    username = self.username_enter.text.strip()
+  
 
     if not email.endswith("@gmail.com") and not email.endswith("@education.nsw.gov.au"):
       self.error_label.visible = True
@@ -23,7 +25,7 @@ class Signin(SigninTemplate):
 
     self.error_label.visible = False
 
-    if not username or not password:
+    if not password:
       alert("Please fill in all fields.")
       return
 

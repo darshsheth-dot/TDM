@@ -34,14 +34,6 @@ components:
     name: error_label
     properties: {align: center, background: '#FFFFFF', bold: false, foreground: '#FF0000', italic: true, text: Please enter a valid email address, underline: true, visible: false}
     type: Label
-  - layout_properties: {grid_position: 'IZQRGQ,NIGMAX'}
-    name: label_4
-    properties: {foreground: 'theme:On Secondary', text: 'Preferred username:'}
-    type: Label
-  - layout_properties: {grid_position: 'PQZZAG,KNCPLC'}
-    name: username_enter
-    properties: {background: '#D3D3D3', foreground: '#000000'}
-    type: TextBox
   - layout_properties: {grid_position: 'ITXFYQ,TTTWJM'}
     name: label_5
     properties: {foreground: 'theme:On Secondary', text: 'Password:'}
