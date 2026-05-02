@@ -34,16 +34,16 @@ components:
     properties: {height: '5'}
     type: Spacer
   - layout_properties: {full_width_row: true, grid_position: 'PFETRG,KUGECG', row_background: '#000000 '}
-    name: flashcard_button
+    name: flashcards_button
     properties:
       background: '#000000'
       font_size: 15
       foreground: '#FFFFFF'
-      icon: fa:clone
+      icon: fa:android
       role: filled-button
       spacing:
         padding: [null, 122, null, 4]
-      text: Flashcard
+      text: MindMap
     type: Button
   - layout_properties: {grid_position: 'FBOSNP,JIOVHI'}
     name: spacer_2
@@ -53,7 +53,6 @@ components:
     name: routine_button
     properties:
       background: '#000000'
-      bold: true
       font_size: 15
       foreground: '#FFFFFF'
       icon: fa:bars
