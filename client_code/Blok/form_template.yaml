@@ -23,7 +23,7 @@ components:
     properties:
       display_mode: fill_width
       height: 313
-      margin: [9, '10', '0', '10']
+      margin: [9, '5', '0', '5']
       source: _/theme/Screenshot 2026-05-02 121904.png
     type: Image
   - layout_properties: {grid_position: 'SVYUZW,FPRYDL HZTRIX,KBPZUE'}
@@ -50,10 +50,18 @@ components:
       spacing:
         padding: [null, null, null, 12]
     type: ColumnPanel
-  - layout_properties: {grid_position: 'SVYUZW,OAYXHX'}
+  - layout_properties: {grid_position: 'SVYUZW,OAYXHX QIKSGV,SAESOT'}
     name: spacer_5
     properties: {height: '2'}
     type: Spacer
+  - layout_properties: {grid_position: 'SVYUZW,OAYXHX UYJVIY,RZDNWZ'}
+    name: outlined_card_3
+    properties:
+      role: outlined-card
+      spacing:
+        margin: ['10', null, null, null]
+        padding: [null, null, null, null]
+    type: ColumnPanel
   layout_properties: {slot: default}
   name: content_panel
   properties:
