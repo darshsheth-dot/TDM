@@ -55,20 +55,6 @@ db_schema:
     indexes: []
     server: full
     title: Feedback
-  math:
-    client: none
-    columns:
-    - admin_ui: {width: 200}
-      client_hidden: false
-      name: math_correct
-      type: number
-    - admin_ui: {width: 200}
-      client_hidden: false
-      name: math_total
-      type: number
-    indexes: []
-    server: full
-    title: Math
   mindmaps:
     client: none
     columns:
@@ -91,20 +77,16 @@ db_schema:
     indexes: []
     server: full
     title: mindmaps
-  science:
+  progress:
     client: none
     columns:
-    - admin_ui: {width: 200}
+    - admin_ui: {order: 0, width: 200}
       client_hidden: false
-      name: science_correct
-      type: number
-    - admin_ui: {width: 200}
-      client_hidden: false
-      name: science_total
+      name: count
       type: number
     indexes: []
     server: full
-    title: Science
+    title: Progress
   tasks:
     client: full
     columns:
@@ -183,5 +165,5 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/anvil/email.yml
-startup: {module: Routine, type: form}
+startup: {module: Routine.RowTemplate1, type: form}
 startup_form: null
