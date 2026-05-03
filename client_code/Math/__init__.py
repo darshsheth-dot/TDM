@@ -75,15 +75,4 @@ class Math(MathTemplate):
         label.text = "Wrong answer, nice try"
         label.foreground = "red"
 
-    # ---------------------------------------------------
-    # SEND SCORE TO SERVER FOR PERCENTAGE TRACKING
-    # ---------------------------------------------------
-    new_percentage = anvil.server.call(
-      "update_math_score",
-      correct_count,
-      total_questions
-    )
-
-    # Optional: show the updated percentage on the page
-    self.math_percentage_label.text = f"Math Accuracy: {new_percentage}%"
-progress = anvil.server.call('increment_progress')
+  

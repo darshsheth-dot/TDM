@@ -66,6 +66,10 @@ class Dashboard(DashboardTemplate):
   def feedback_button_click(self, **event_args):
       open_form('Fback_Form')
 
+  @handle("flashcard_button", "click")
+  def flashcard_button_click(self, **event_args):
+    open_form('Flashcards')
+
   # ---------------------------------------------------
   # MAIN BUTTONS
   # ---------------------------------------------------
