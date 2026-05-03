@@ -22,7 +22,14 @@ components:
     type: Button
   - layout_properties: {grid_position: 'SIUAUB,BZDMCR'}
     name: end_button
-    properties: {background: '#3CC7CC ', font_size: 83, foreground: '#000000', role: outlined-button, text: End}
+    properties:
+      background: '#3CC7CC '
+      font_size: 83
+      foreground: '#000000'
+      role: outlined-button
+      spacing:
+        padding: [null, null, 12, null]
+      text: End
     type: Button
   - layout_properties: {grid_position: 'JADWPI,JOSLLA'}
     name: audio_panel

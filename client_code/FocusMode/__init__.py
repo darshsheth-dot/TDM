@@ -90,12 +90,8 @@ class FocusMode(FocusModeTemplate):
   @handle("end_button", "click")
   def end_button_click(self, **event_args):
     self.running = False
-    self.timer_1.enabled = False
-
-    anvil.js.call_js("eval", "var a=document.getElementById('bgm'); a.pause(); a.currentTime=0")
-
+    self.timer_1.interval = 0
     open_form('Blok')
-
   # ---------------------------------------------------
   # NAVIGATION
   # ---------------------------------------------------
