@@ -37,13 +37,17 @@ class Science(ScienceTemplate):
   def mindmap_button_click(self, **event_args):
     open_form('MindMap')
 
-  @handle("routine_button", "click")
-  def routine_button_click(self, **event_args):
-    open_form("Routine")
-
   @handle("blok_button", "click")
   def blok_button_click(self, **event_args):
     open_form("Blok")
+
+  @handle("feedback_button", "click")
+  def feedback_button_click(self, **event_args):
+    open_form('Fback_Form')
+
+  @handle("flashcard_button", "click")
+  def flashcard_button_click(self, **event_args):
+    open_form('Flashcards')
 
   # -----------------------------
   # LOAD QUESTION

@@ -132,22 +132,6 @@ components:
         padding: [null, 122, null, 4]
       text: MindMap
     type: Button
-  - layout_properties: {grid_position: 'FBOSNP,JIOVHI'}
-    name: spacer_2
-    properties: {height: '5'}
-    type: Spacer
-  - layout_properties: {full_width_row: true, grid_position: 'EGDBIL,XNPTCC'}
-    name: routine_button
-    properties:
-      background: '#000000'
-      font_size: 15
-      foreground: '#FFFFFF'
-      icon: fa:bars
-      role: filled-button
-      spacing:
-        padding: [null, 153, null, null]
-      text: Routine
-    type: Button
   - layout_properties: {grid_position: 'MORCBD,OLLNBG'}
     name: spacer_3
     properties: {height: '5'}
@@ -164,7 +148,11 @@ components:
         padding: [null, 172, null, null]
       text: Blok
     type: Button
-  - layout_properties: {grid_position: 'KATCQO,QKFSAG'}
+  - layout_properties: {grid_position: 'FJGOVL,XAWMYW'}
+    name: spacer_8
+    properties: {height: '5'}
+    type: Spacer
+  - layout_properties: {grid_position: 'NXRBEG,LKLHUO'}
     name: flashcard_button
     properties:
       background: '#000000'
@@ -175,6 +163,21 @@ components:
         padding: [null, 106, null, 0]
       text: Flashcards
     type: Button
+  - layout_properties: {grid_position: ''}
+    name: spacer_9
+    properties: {height: '5'}
+    type: Spacer
+  - layout_properties: {grid_position: 'OBBLPN,OQIBVY'}
+    name: feedback_button
+    properties:
+      background: '#000000'
+      font_size: 15
+      foreground: '#FFFFFF'
+      icon: fa:address-book-o
+      spacing:
+        padding: [null, 80, null, 7]
+      text: Feedback Form
+    type: Button
   layout_properties: {slot: left-nav}
   name: column_panel_1
   properties:
@@ -183,7 +186,7 @@ components:
     role: null
     spacing:
       margin: [null, null, 0, null]
-      padding: [null, null, 277, null]
+      padding: [0, null, 277, null]
     spacing_below: none
   type: ColumnPanel
 - layout_properties: {slot: title}

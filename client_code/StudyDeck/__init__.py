@@ -55,3 +55,23 @@ class StudyDeck(StudyDeckTemplate):
   @handle("", "hide")
   def form_hide(self, **event_args):
     pass
+
+  @handle("Dashboard_button", "click")
+  def Dashboard_button_click(self, **event_args):
+    open_form('Dashboard')
+
+  @handle("mindmap_button", "click")
+  def mindmap_button_click(self, **event_args):
+    open_form('MindMap')
+
+  @handle("blok_button", "click")
+  def blok_button_click(self, **event_args):
+    open_form('Blok')
+
+  @handle("feedback_button", "click")
+  def feedback_button_click(self, **event_args):
+    open_form('Fback_Form')
+
+  @handle("flashcard_button", "click")
+  def flashcard_button_click(self, **event_args):
+    open_form('Flashcards')

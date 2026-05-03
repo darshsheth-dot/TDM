@@ -115,23 +115,6 @@ components:
     properties: {height: '5'}
     type: Spacer
   - event_bindings: {}
-    layout_properties: {full_width_row: true, grid_position: 'EGDBIL,XNPTCC'}
-    name: routine_button
-    properties:
-      background: '#000000'
-      font_size: 15
-      foreground: '#FFFFFF'
-      icon: fa:bars
-      role: filled-button
-      spacing:
-        padding: [null, 153, null, null]
-      text: Routine
-    type: Button
-  - layout_properties: {grid_position: 'MORCBD,OLLNBG'}
-    name: spacer_3
-    properties: {height: '5'}
-    type: Spacer
-  - event_bindings: {}
     layout_properties: {full_width_row: true, grid_position: 'GEPDID,NZBGFO', row_background: '#000000'}
     name: blok_button
     properties:
@@ -148,6 +131,21 @@ components:
     name: spacer_6
     properties: {height: '5'}
     type: Spacer
+  - layout_properties: {grid_position: 'SBEGAR,LVLMYP'}
+    name: flashcard_button
+    properties:
+      background: '#000000'
+      font_size: 15
+      foreground: '#FFFFFF'
+      icon: fa:clone
+      spacing:
+        padding: [null, 106, null, 0]
+      text: Flashcards
+    type: Button
+  - layout_properties: {grid_position: 'XUWCXO,VBTYMC'}
+    name: spacer_7
+    properties: {height: '5'}
+    type: Spacer
   - layout_properties: {grid_position: 'XZBAUO,MBVIRP'}
     name: feedback_button
     properties:
@@ -158,21 +156,6 @@ components:
       spacing:
         padding: [null, 80, null, 7]
       text: Feedback Form
-    type: Button
-  - layout_properties: {grid_position: 'IYBQVD,WYZBJX'}
-    name: spacer_7
-    properties: {height: '5'}
-    type: Spacer
-  - layout_properties: {grid_position: 'DVWKSJ,LNJRVL'}
-    name: button_1
-    properties:
-      background: '#000000'
-      font_size: 15
-      foreground: '#FFFFFF'
-      icon: fa:clone
-      spacing:
-        padding: [null, 106, null, 0]
-      text: Flashcards
     type: Button
   layout_properties: {slot: left-nav}
   name: column_panel_1
