@@ -1,6 +1,10 @@
 components:
 - components:
-  - components: []
+  - components:
+    - layout_properties: {grid_position: 'PLMDMU,QSHAWC'}
+      name: label_2
+      properties: {align: center, bold: false, font: Anton, font_size: 40, text: Add Flashcard}
+      type: Label
     layout_properties: {grid_position: 'YYFYCL,JMKREU'}
     name: outlined_card_1
     properties:
@@ -10,29 +14,43 @@ components:
       spacing:
         margin: [null, null, null, null]
     type: ColumnPanel
-  - components: []
-    layout_properties: {grid_position: 'SVYUZW,FPRYDL XXFEXB,TZNDKW'}
+  - layout_properties: {grid_position: 'IRDCWY,SUBLKG'}
+    name: label_3
+    properties: {align: center, background: '#3CC7CC ', text: 'Deck Name: '}
+    type: Label
+  - layout_properties: {grid_position: 'ANXYMO,YQXORV'}
+    name: deck_name_input
+    properties: {}
+    type: TextBox
+  - components:
+    - layout_properties: {grid_position: 'WAEFHT,HMQEDT'}
+      name: label_4
+      properties: {align: center, bold: true, text: 'Question:'}
+      type: Label
+    - layout_properties: {grid_position: 'TOAIRY,DYIIEP'}
+      name: question_input
+      properties: {}
+      type: TextArea
+    - layout_properties: {grid_position: 'LDXBVU,SHMPLL'}
+      name: spacer_4
+      properties: {height: 32}
+      type: Spacer
+    - layout_properties: {grid_position: 'GZAMME,UBGFNH'}
+      name: label_5
+      properties: {align: center, bold: true, text: 'Answer:'}
+      type: Label
+    - layout_properties: {grid_position: 'CNVJON,JOMLYJ'}
+      name: answer_input
+      properties: {}
+      type: TextArea
+    layout_properties: {grid_position: 'ZQGZJP,MEELMT'}
     name: outlined_card_2
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
+    properties: {role: outlined-card}
     type: ColumnPanel
-  - layout_properties: {grid_position: 'SVYUZW,FPRYDL XRXBPT,FVRBSK'}
-    name: spacer_4
-    properties: {height: '2'}
-    type: Spacer
-  - components: []
-    layout_properties: {grid_position: 'SVYUZW,OAYXHX HZAXUJ,ADOZIL'}
-    name: outlined_card_3
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
-    type: ColumnPanel
-  - layout_properties: {grid_position: 'SVYUZW,OAYXHX GAXTNB,ORMOHC'}
-    name: spacer_5
-    properties: {height: '2'}
-    type: Spacer
-  - components: []
-    layout_properties: {grid_position: 'KQWHAG,MWIKAI'}
-    name: outlined_card_4
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
-    type: ColumnPanel
+  - layout_properties: {grid_position: 'IJHHNU,PGSJDW'}
+    name: button_2
+    properties: {background: '#000000', font_size: 30, foreground: '#FFFFFF', text: Save Card}
+    type: Button
   layout_properties: {slot: default}
   name: content_panel
   properties:
