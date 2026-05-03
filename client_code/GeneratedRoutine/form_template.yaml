@@ -18,10 +18,6 @@ components:
     name: routine_output
     properties: {background: '#3CC7CC ', border: 1px solid black}
     type: Label
-  - layout_properties: {grid_position: 'BKQDHU,LIFBEX'}
-    name: spacer_4
-    properties: {height: '15'}
-    type: Spacer
   - layout_properties: {grid_position: 'QSGEOV,YLGRKU'}
     name: back_button
     properties: {background: '#3CC7CC ', border: '', font_size: 30, foreground: '#000000', role: outlined-button, text: Back to Routine, visible: true}
