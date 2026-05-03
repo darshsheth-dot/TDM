@@ -85,7 +85,7 @@ components:
     name: spacer_6
     properties: {height: '5'}
     type: Spacer
-  - layout_properties: {grid_position: 'UHTJAI,OTUSHR'}
+  - layout_properties: {grid_position: 'NLOMLR,YIRXEY'}
     name: flashcard_button
     properties:
       background: '#000000'
@@ -96,6 +96,21 @@ components:
         padding: [null, 106, null, 0]
       text: Flashcards
     type: Button
+  - layout_properties: {grid_position: 'UHTJAI,OTUSHR ZMLSZI,TTXLFN'}
+    name: spacer_7
+    properties: {height: '5'}
+    type: Spacer
+  - layout_properties: {grid_position: 'XNAUTU,ZKIAYF'}
+    name: feedback_button
+    properties:
+      background: '#000000'
+      font_size: 15
+      foreground: '#FFFFFF'
+      icon: fa:address-book-o
+      spacing:
+        padding: [null, 80, null, 7]
+      text: Feedback Form
+    type: Button
   layout_properties: {slot: left-nav}
   name: column_panel_1
   properties:
@@ -104,7 +119,7 @@ components:
     role: null
     spacing:
       margin: [null, null, 0, null]
-      padding: [null, null, 277, null]
+      padding: [0, null, 277, null]
     spacing_below: none
   type: ColumnPanel
 - layout_properties: {slot: title}

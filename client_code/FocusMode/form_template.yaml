@@ -124,6 +124,36 @@ components:
         padding: [null, 172, null, null]
       text: Blok
     type: Button
+  - layout_properties: {grid_position: 'ZUQMQW,QQZMKZ'}
+    name: spacer_5
+    properties: {height: '5'}
+    type: Spacer
+  - layout_properties: {grid_position: 'IGRFAJ,RMTSGV'}
+    name: flashcard_button
+    properties:
+      background: '#000000'
+      font_size: 15
+      foreground: '#FFFFFF'
+      icon: fa:clone
+      spacing:
+        padding: [null, 106, null, 0]
+      text: Flashcards
+    type: Button
+  - layout_properties: {grid_position: 'UBCMOT,OXGCEC TRSJPS,JDOWEZ'}
+    name: spacer_6
+    properties: {height: '5'}
+    type: Spacer
+  - layout_properties: {grid_position: 'GOEQFJ,KSRMEV'}
+    name: feedback_button
+    properties:
+      background: '#000000'
+      font_size: 15
+      foreground: '#FFFFFF'
+      icon: fa:address-book-o
+      spacing:
+        padding: [null, 80, null, 7]
+      text: Feedback Form
+    type: Button
   layout_properties: {slot: left-nav}
   name: column_panel_1
   properties:
@@ -132,7 +162,7 @@ components:
     role: null
     spacing:
       margin: [null, null, 0, null]
-      padding: [null, null, 277, null]
+      padding: [0, 0, 327, null]
     spacing_below: none
   type: ColumnPanel
 - layout_properties: {slot: title}

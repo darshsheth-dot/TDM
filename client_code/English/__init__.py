@@ -39,8 +39,8 @@ class English(EnglishTemplate):
   def Dashboard_button_click(self, **event_args):
     open_form("Dashboard")
 
-  @handle("flashcard_button", "click")
-  def flashcard_button_click(self, **event_args):
+  @handle("mindmap_button", "click")
+  def mindmap_button_click(self, **event_args):
     open_form("MindMap")
 
   @handle("routine_button", "click")
@@ -50,6 +50,14 @@ class English(EnglishTemplate):
   @handle("blok_button", "click")
   def blok_button_click(self, **event_args):
     open_form("Blok")
+
+  @handle("feedback_button", "click")
+  def feedback_button_click(self, **event_args):
+    open_form('Fback_Form')
+
+  @handle("flashcard_button", "click")
+  def flashcard_button_click(self, **event_args):
+    open_form('Flashcards')
 
   # -----------------------------
   # LOAD WORD + DEFINITION

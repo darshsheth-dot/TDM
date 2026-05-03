@@ -29,3 +29,7 @@ class Fback_Form(Fback_FormTemplate):
       self.name_box.text = ""
     self.email_box.text = ""
     self.feedback_box.text = ""
+
+  @handle("return_fback", "click")
+  def return_fback_click(self, **event_args):
+    open_form("Dashboard")
