@@ -35,7 +35,13 @@ components:
     type: Button
   - layout_properties: {full_width_row: true, grid_position: 'LXKLIV,FVMDEE'}
     name: decks_label
-    properties: {align: center, background: '#3CC7CC ', font_size: 18, foreground: '#FFFFFF'}
+    properties:
+      align: center
+      background: ''
+      font_size: 18
+      foreground: '#FFFFFF'
+      spacing:
+        padding: [null, null, null, 0]
     type: Label
   - layout_properties: {grid_position: 'ZOYRFC,ELQAMV'}
     name: open_deck_button

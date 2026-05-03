@@ -46,11 +46,12 @@ class Flashcards(FlashcardsTemplate):
 
   @handle("add_cards_button", "click")
   def add_cards_button_click(self, **event_args):
-      name = self.deck_name_input.text.strip()
-  if not name:
+    name = self.deck_name_input.text.strip()
+    if not name:
       alert("Enter the deck name you want to add cards to!")
       return
-  open_form('NewCard', deck_name=name)
+    open_form('NewCard', deck_name=name)
+
 
   @handle("Dashboard_button", "click")
   def Dashboard_button_click(self, **event_args):
