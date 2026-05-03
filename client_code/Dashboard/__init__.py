@@ -54,9 +54,6 @@ class Dashboard(DashboardTemplate):
   def mindmap_button_click(self, **event_args):
     open_form('MindMap')
 
-  @handle("routine_button", "click")
-  def routine_button_click(self, **event_args):
-    open_form('Routine')
 
   @handle("blok_button", "click")
   def blok_button_click(self, **event_args):

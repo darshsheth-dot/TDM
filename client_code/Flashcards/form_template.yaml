@@ -143,23 +143,6 @@ components:
     properties: {height: '5'}
     type: Spacer
   - event_bindings: {}
-    layout_properties: {full_width_row: true, grid_position: 'EGDBIL,XNPTCC'}
-    name: routine_button
-    properties:
-      background: '#000000'
-      font_size: 15
-      foreground: '#FFFFFF'
-      icon: fa:bars
-      role: filled-button
-      spacing:
-        padding: [null, 153, null, null]
-      text: Routine
-    type: Button
-  - layout_properties: {grid_position: 'MORCBD,OLLNBG'}
-    name: spacer_3
-    properties: {height: '5'}
-    type: Spacer
-  - event_bindings: {}
     layout_properties: {full_width_row: true, grid_position: 'GEPDID,NZBGFO', row_background: '#000000'}
     name: blok_button
     properties:

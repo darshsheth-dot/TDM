@@ -78,11 +78,11 @@ class FocusMode(FocusModeTemplate):
     if self.running:
       self.running = False
       self.pause_button.text = "Resume"
-      anvil.js.call_js("eval", "document.getElementById('bgm').pause()")
+      
     else:
       self.running = True
       self.pause_button.text = "Pause"
-      anvil.js.call_js("eval", "document.getElementById('bgm').play()")
+      
 
   # ---------------------------------------------------
   # END SESSION
@@ -103,9 +103,6 @@ class FocusMode(FocusModeTemplate):
   def mindmap_button_click(self, **event_args):
     open_form('MindMap')
 
-  @handle("routine_button", "click")
-  def routine_button_click(self, **event_args):
-    open_form('Routine')
 
   @handle("blok_button", "click")
   def blok_button_click(self, **event_args):
