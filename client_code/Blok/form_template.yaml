@@ -146,11 +146,11 @@ components:
     type: Label
   - data_bindings:
     - {code: 'self.item['''']', property: border, writeback: false}
-    layout_properties: {full_width_row: true, grid_position: 'SGDUMT,NVXJZV', row_background: '#3CC7CC '}
+    layout_properties: {full_width_row: true, grid_position: 'SGDUMT,NVXJZV', row_background: '#000000'}
     name: Dashboard_button
     properties:
       align: right
-      background: '#3CC7CC '
+      background: '#000000'
       bold: false
       font_size: 15
       foreground: '#FFFFFF'
@@ -183,10 +183,10 @@ components:
     type: Spacer
   - data_bindings:
     - {code: 'self.item['''']', property: border, writeback: false}
-    layout_properties: {full_width_row: true, grid_position: 'GEPDID,NZBGFO', row_background: '#000000'}
+    layout_properties: {full_width_row: true, grid_position: 'GEPDID,NZBGFO', row_background: '#3CC7CC'}
     name: blok_button
     properties:
-      background: '#000000'
+      background: '#3CC7CC'
       border: ''
       font_size: 15
       foreground: '#FFFFFF'

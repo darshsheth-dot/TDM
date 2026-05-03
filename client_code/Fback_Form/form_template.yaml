@@ -37,8 +37,8 @@ components:
     - layout_properties: {grid_position: 'YCHBEJ,ZOGJCP'}
       name: return_fback
       properties:
-        background: '#3CC7CC'
-        foreground: '#000000'
+        background: '#000000'
+        foreground: '#FFFFFF'
         role: outlined-button
         spacing:
           padding: [null, 28, null, 32]
