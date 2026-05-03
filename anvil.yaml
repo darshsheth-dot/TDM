@@ -188,7 +188,7 @@ db_schema:
     server: full
     title: Users
 dependencies: []
-metadata: {description: '', logo_img: 'asset:dboard logo.png', title: The Daily Mentor}
+metadata: {description: '', logo_img: 'asset:Screenshot 2026-05-03 195046.png', title: The Daily Mentor}
 name: Syon, Darsh, Ishaan
 native_deps: {head_html: ''}
 package_name: News_App
