@@ -50,9 +50,9 @@ class Dashboard(DashboardTemplate):
   def Dashboard_button_click(self, **event_args):
     open_form('Dashboard')
 
-  @handle("flashcard_button", "click")
-  def flashcard_button_click(self, **event_args):
-    open_form('Flashcards')
+  @handle("mindmap_button", "click")
+  def mindmap_button_click(self, **event_args):
+    open_form('MindMap')
 
   @handle("routine_button", "click")
   def routine_button_click(self, **event_args):
