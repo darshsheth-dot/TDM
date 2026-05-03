@@ -14,7 +14,7 @@ class Dashboard(DashboardTemplate):
   def _load_progress(self):
     count = anvil.server.call('get_progress')
 
-    total = 30  # total bar segments
+    total = 118 # total bar segments
 
     if count == 0:
       filled = 0

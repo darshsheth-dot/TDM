@@ -1,9 +1,9 @@
 components:
 - components:
   - components:
-    - layout_properties: {grid_position: 'JECAWP,QJCSBV'}
-      name: progress_label
-      properties: {font: monospac, font_size: 20, text: 'Progress: Not Started'}
+    - layout_properties: {grid_position: 'NNJNTD,QEDSWI'}
+      name: label_3
+      properties: {align: center, font: monospace, font_size: 18, text: Progress Bar}
       type: Label
     - layout_properties: {grid_position: 'LGCFSP,FWWQTB'}
       name: progress_bar
