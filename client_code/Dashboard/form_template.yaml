@@ -19,7 +19,7 @@ components:
       type: Label
     - layout_properties: {grid_position: 'RAKXVS,RZVAWB'}
       name: image_2
-      properties: {}
+      properties: {source: _/theme/morningmindgames.png}
       type: Image
     - layout_properties: {grid_position: 'ANIWWE,WQCHEG'}
       name: reset_button
