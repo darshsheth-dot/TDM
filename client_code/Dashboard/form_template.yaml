@@ -84,88 +84,92 @@ components:
   properties: {text: TDM}
   type: Label
 - components:
-  - layout_properties: {grid_position: 'TYTZPF,DTWRNU'}
+  - layout_properties: {grid_position: 'LOGGVA,NDXXHR'}
     name: image_1
-    properties: {height: 206, source: _/theme/dboard logo.png}
+    properties: {height: 130, source: _/theme/dboard logo.png}
     type: Image
-  - layout_properties: {full_width_row: true, grid_position: 'UIVKKC,VNLUBE', row_background: '#3CC7CC '}
-    name: dashboard_button
+  - layout_properties: {grid_position: 'YMOZIH,CPTHZO'}
+    name: title_label
+    properties: {bold: true, font: Lato, font_size: 25, foreground: '#FFFFFF', text: The DAILY Mentor}
+    type: Label
+  - data_bindings:
+    - {code: 'self.item['''']', property: border, writeback: false}
+    layout_properties: {full_width_row: true, grid_position: 'SGDUMT,NVXJZV', row_background: '#3CC7CC '}
+    name: Dashboard_button
     properties:
-      align: left
+      align: right
       background: '#3CC7CC '
+      bold: false
+      font_size: 15
       foreground: '#FFFFFF'
       icon: fa:archive
+      icon_align: left
+      role: filled-button
       spacing:
-        padding: [null, '', null, 47]
+        padding: [null, 137, null, 0]
       text: Dashboard
     type: Button
-  - layout_properties: {grid_position: 'JRRQQW,RZHKTR'}
-    name: spacer_2
+  - layout_properties: {grid_position: 'UACDCY,SZHSIA'}
+    name: spacer_1
     properties: {height: '5'}
     type: Spacer
-  - layout_properties: {full_width_row: true, grid_position: 'YWBSHF,ICTABA', row_background: '#000000'}
+  - layout_properties: {full_width_row: true, grid_position: 'PFETRG,KUGECG', row_background: '#000000 '}
     name: mindmap_button
     properties:
       background: '#000000'
+      font_size: 15
       foreground: '#FFFFFF'
       icon: fa:android
       role: filled-button
       spacing:
-        padding: [null, 31, null, 11]
-      text: Mindmap
+        padding: [null, 122, null, 4]
+      text: MindMap
     type: Button
-  - layout_properties: {grid_position: 'MIQUGD,ZBLBDH'}
-    name: spacer_7
+  - layout_properties: {grid_position: 'FBOSNP,JIOVHI'}
+    name: spacer_2
     properties: {height: '5'}
     type: Spacer
-  - layout_properties: {full_width_row: true, grid_position: 'ALKALU,WYMWYF', row_background: '#000000 '}
+  - layout_properties: {full_width_row: true, grid_position: 'EGDBIL,XNPTCC'}
     name: routine_button
     properties:
       background: '#000000'
+      font_size: 15
       foreground: '#FFFFFF'
-      icon: fa:align-justify
+      icon: fa:bars
       role: filled-button
       spacing:
-        padding: [null, 33, null, 5]
+        padding: [null, 153, null, null]
       text: Routine
     type: Button
-  - layout_properties: {grid_position: 'VVOIKW,MHWBWV'}
-    name: spacer_9
+  - layout_properties: {grid_position: 'MORCBD,OLLNBG'}
+    name: spacer_3
     properties: {height: '5'}
     type: Spacer
-  - layout_properties: {full_width_row: true, grid_position: 'NHRKPH,QZKJRJ', row_background: '#00000'}
+  - data_bindings:
+    - {code: 'self.item['''']', property: border, writeback: false}
+    layout_properties: {full_width_row: true, grid_position: 'GEPDID,NZBGFO', row_background: '#000000'}
     name: blok_button
     properties:
       background: '#000000'
+      border: ''
+      font_size: 15
       foreground: '#FFFFFF'
       icon: fa:ban
       role: filled-button
       spacing:
-        padding: [null, 47, null, 0]
+        padding: [null, 172, null, null]
       text: Blok
     type: Button
-  - layout_properties: {grid_position: 'SALSYX,SDMLQE'}
-    name: spacer_8
-    properties: {height: '5'}
-    type: Spacer
-  - layout_properties: {grid_position: 'TYTPGJ,RSTJWA'}
-    name: spacer_3
-    properties: {height: '5'}
-    type: Spacer
-  - layout_properties: {grid_position: 'UEHQZR,TXJHEI'}
-    name: spacer_1
-    properties: {height: 0}
-    type: Spacer
-  - layout_properties: {grid_position: 'UEHQZR,XZZUNM'}
-    name: spacer_6
-    properties: {height: '5'}
-    type: Spacer
   layout_properties: {slot: left-nav}
   name: column_panel_1
   properties:
     background: '#000000'
+    col_spacing: huge
+    role: null
     spacing:
-      padding: [null, 0, 505, 1]
+      margin: [null, null, 0, null]
+      padding: [null, null, 277, null]
+    spacing_below: none
   type: ColumnPanel
 container:
   properties: {background: '#010101', border: '2', html: '@theme:standard-page.html'}

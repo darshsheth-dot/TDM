@@ -45,3 +45,8 @@ class Dashboard(DashboardTemplate):
   @handle("", "refreshing_data_bindings")
   def form_refreshing_data_bindings(self, **event_args):
     pass
+
+  @handle("Dashboard_button", "click")
+  def Dashboard_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form("Dashboard")

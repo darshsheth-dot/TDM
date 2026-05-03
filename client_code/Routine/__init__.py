@@ -48,3 +48,13 @@ class Routine(RoutineTemplate):
   def form_refreshing_data_bindings(self, **event_args):
     """This method is called when refresh_data_bindings is called"""
     pass  # Write Code Here
+
+  @handle("routine_button", "click")
+  def routine_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form("Routine")
+
+  @handle("blok_button", "click")
+  def blok_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form("Blok")
