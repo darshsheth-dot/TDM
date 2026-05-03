@@ -101,11 +101,11 @@ components:
     type: Label
   - data_bindings:
     - {code: 'self.item['''']', property: border, writeback: false}
-    layout_properties: {full_width_row: true, grid_position: 'SGDUMT,NVXJZV', row_background: '#3CC7CC '}
+    layout_properties: {full_width_row: true, grid_position: 'SGDUMT,NVXJZV', row_background: '#000000'}
     name: Dashboard_button
     properties:
       align: right
-      background: '#3CC7CC '
+      background: '#000000'
       bold: false
       font_size: 15
       foreground: '#FFFFFF'
@@ -120,10 +120,10 @@ components:
     name: spacer_1
     properties: {height: '5'}
     type: Spacer
-  - layout_properties: {full_width_row: true, grid_position: 'PFETRG,KUGECG', row_background: '#000000 '}
+  - layout_properties: {full_width_row: true, grid_position: 'PFETRG,KUGECG', row_background: '#3CC7CC '}
     name: mindmap_button
     properties:
-      background: '#000000'
+      background: '#3CC7CC '
       font_size: 15
       foreground: '#FFFFFF'
       icon: fa:android

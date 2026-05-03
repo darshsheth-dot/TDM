@@ -1,13 +1,6 @@
 from ._anvil_designer import MathTemplate
 from anvil import *
-import anvil.google.auth, anvil.google.drive
-from anvil.google.drive import app_files
-import anvil.users
 import anvil.server
-import anvil.tables as tables
-import anvil.tables.query as q
-from anvil.tables import app_tables
-
 
 class Math(MathTemplate):
   def __init__(self, **properties):
@@ -16,7 +9,6 @@ class Math(MathTemplate):
   # ---------------------------------------------------
   # SIDEBAR NAVIGATION
   # ---------------------------------------------------
-
   @handle("Dashboard_button", "click")
   def Dashboard_button_click(self, **event_args):
     open_form("Dashboard")
@@ -36,10 +28,10 @@ class Math(MathTemplate):
   @handle("flashcard_button", "click")
   def flashcard_button_click(self, **event_args):
     open_form('Flashcards')
-  # ---------------------------------------------------
-  # SUBMIT BUTTON — CHECK ALL 5 ANSWERS + SEND SCORE
-  # ---------------------------------------------------
 
+  # ---------------------------------------------------
+  # SUBMIT BUTTON — CHECK ALL 5 ANSWERS + UPDATE PROGRESS
+  # ---------------------------------------------------
   @handle("submit_button", "click")
   def submit_button_click(self, **event_args):
 
@@ -61,9 +53,7 @@ class Math(MathTemplate):
       "text_box_5": self.label_q5
     }
 
-    # Count correct answers
     correct_count = 0
-    total_questions = len(correct_answers)
 
     # Check each answer
     for box_name, correct in correct_answers.items():
@@ -78,4 +68,9 @@ class Math(MathTemplate):
         label.text = "Wrong answer, nice try"
         label.foreground = "red"
 
-  
+    # ---------------------------------------------------
+    # UPDATE MORNING MIND GAMES PROGRESS
+    # ---------------------------------------------------
+    anvil.server.call('increment_progress')
+
+    alert(f"You got {correct_count}/5 correct! Progress updated.")

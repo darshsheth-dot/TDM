@@ -95,10 +95,10 @@ components:
     type: Spacer
   - data_bindings:
     - {code: 'self.item['''']', property: border, writeback: false}
-    layout_properties: {full_width_row: true, grid_position: 'GEPDID,NZBGFO', row_background: '#000000'}
+    layout_properties: {full_width_row: true, grid_position: 'GEPDID,NZBGFO', row_background: '#3CC7CC '}
     name: blok_button
     properties:
-      background: '#000000'
+      background: '#3CC7CC '
       border: ''
       font_size: 15
       foreground: '#FFFFFF'
@@ -146,7 +146,7 @@ components:
     role: null
     spacing:
       margin: [null, null, 0, null]
-      padding: [0, 0, 327, null]
+      padding: [0, 0, 325, null]
     spacing_below: none
   type: ColumnPanel
 - layout_properties: {slot: title}

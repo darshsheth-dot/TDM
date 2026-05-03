@@ -1,11 +1,7 @@
 from ._anvil_designer import DashboardTemplate
 from anvil import *
-import anvil.google.auth, anvil.google.drive
-from anvil.google.drive import app_files
-import anvil.users
 import anvil.server
 from anvil.tables import app_tables
-
 
 class Dashboard(DashboardTemplate):
   def __init__(self, **properties):
@@ -13,27 +9,32 @@ class Dashboard(DashboardTemplate):
     self._load_progress()
 
   # ---------------------------------------------------
-  # LOAD MORNING MIND GAMES PROGRESS (115 DOTS)
+  # LOAD MORNING MIND GAMES PROGRESS (PROGRESS BAR)
   # ---------------------------------------------------
   def _load_progress(self):
     count = anvil.server.call('get_progress')
 
-    # 115 identical dots
-    dots = "●" * 115
+    total = 30  # total bar segments
 
-    # Choose colour based on progress count
     if count == 0:
-      colour = "black"
+      filled = 0
+      color = "black"
     elif count == 1:
-      colour = "red"
+      filled = total // 3
+      color = "red"
     elif count == 2:
-      colour = "orange"
+      filled = (total * 2) // 3
+      color = "orange"
     else:
-      colour = "green"
+      filled = total
+      color = "green"
 
-    # Update label
-    self.progress_label.text = dots
-    self.progress_label.foreground = colour
+    empty = total - filled
+
+    bar = "█" * filled + "░" * empty
+
+    self.progress_bar.text = bar
+    self.progress_bar.foreground = color
 
   # ---------------------------------------------------
   # RESET PROGRESS BUTTON
@@ -54,14 +55,13 @@ class Dashboard(DashboardTemplate):
   def mindmap_button_click(self, **event_args):
     open_form('MindMap')
 
-
   @handle("blok_button", "click")
   def blok_button_click(self, **event_args):
     open_form('Blok')
 
   @handle("feedback_button", "click")
   def feedback_button_click(self, **event_args):
-      open_form('Fback_Form')
+    open_form('Fback_Form')
 
   @handle("flashcard_button", "click")
   def flashcard_button_click(self, **event_args):
