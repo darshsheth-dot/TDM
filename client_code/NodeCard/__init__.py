@@ -1,5 +1,6 @@
 from ._anvil_designer import NodeCardTemplate
 from anvil import *
+import anvil.users
 
 class NodeCard(NodeCardTemplate):
   def __init__(self, node_id=None, title="", notes="", **properties):

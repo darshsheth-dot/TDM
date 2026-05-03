@@ -1,5 +1,6 @@
 from ._anvil_designer import MindMapTemplate
 from anvil import *
+import anvil.users
 import anvil.server
 import uuid
 from ..NodeCard import NodeCard
