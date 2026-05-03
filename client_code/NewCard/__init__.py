@@ -1,4 +1,4 @@
-from ._anvil_designer import FlashcardsTemplate
+from ._anvil_designer import NewCardTemplate
 from anvil import *
 import anvil.tables as tables
 import anvil.tables.query as q
@@ -10,11 +10,10 @@ import anvil.server
 from anvil.tables import app_tables
 
 
-class Flashcards(FlashcardsTemplate):
+class NewCard(NewCardTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
 
- 
   @handle("Dashboard_button", "click")
   def Dashboard_button_click(self, **event_args):
     open_form("Dashboard")
@@ -34,5 +33,3 @@ class Flashcards(FlashcardsTemplate):
   @handle("feedback_button", "click")
   def feedback_button_click(self, **event_args):
     open_form("Fback_Form")
-
-  

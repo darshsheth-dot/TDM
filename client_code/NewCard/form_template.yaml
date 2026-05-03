@@ -1,10 +1,6 @@
 components:
 - components:
-  - components:
-    - layout_properties: {grid_position: 'GRZBOR,PDMPHB'}
-      name: label_2
-      properties: {align: center, font_size: 40, foreground: '#000000', text: Flashcards}
-      type: Label
+  - components: []
     layout_properties: {grid_position: 'YYFYCL,JMKREU'}
     name: outlined_card_1
     properties:
