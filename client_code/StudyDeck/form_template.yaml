@@ -1,6 +1,10 @@
 components:
 - components:
-  - components: []
+  - components:
+    - layout_properties: {grid_position: 'SPXUII,RTQDDJ'}
+      name: deck_title_label
+      properties: {align: center}
+      type: Label
     layout_properties: {grid_position: 'YYFYCL,JMKREU'}
     name: outlined_card_1
     properties:
@@ -10,29 +14,35 @@ components:
       spacing:
         margin: [null, null, null, null]
     type: ColumnPanel
-  - components: []
-    layout_properties: {grid_position: 'SVYUZW,FPRYDL XXFEXB,TZNDKW'}
+  - components:
+    - layout_properties: {grid_position: 'WLABYQ,UEFAWO'}
+      name: question_label
+      properties: {align: center}
+      type: Label
+    - layout_properties: {grid_position: 'IJTWUJ,ENVQWU'}
+      name: spacer_4
+      properties: {height: 32}
+      type: Spacer
+    - layout_properties: {grid_position: 'YRNLOU,OLQVZN'}
+      name: answer_label
+      properties: {align: center}
+      type: Label
+    layout_properties: {grid_position: 'JIXVEI,AJDAKG'}
     name: outlined_card_2
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
+    properties: {role: outlined-card}
     type: ColumnPanel
-  - layout_properties: {grid_position: 'SVYUZW,FPRYDL XRXBPT,FVRBSK'}
-    name: spacer_4
-    properties: {height: '2'}
-    type: Spacer
-  - components: []
-    layout_properties: {grid_position: 'SVYUZW,OAYXHX HZAXUJ,ADOZIL'}
-    name: outlined_card_3
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
-    type: ColumnPanel
-  - layout_properties: {grid_position: 'SVYUZW,OAYXHX GAXTNB,ORMOHC'}
-    name: spacer_5
-    properties: {height: '2'}
-    type: Spacer
-  - components: []
-    layout_properties: {grid_position: 'KQWHAG,MWIKAI'}
-    name: outlined_card_4
-    properties: {background: '#3CC7CC ', border: 1px solid black, role: outlined-card}
-    type: ColumnPanel
+  - layout_properties: {grid_position: 'FWYAMP,RPHZIE'}
+    name: reveal_button
+    properties: {background: '#000000', foreground: '#FFFFFF', text: Reveal Answer}
+    type: Button
+  - layout_properties: {grid_position: 'FWYAMP,ZMYEUX'}
+    name: prev_button
+    properties: {background: '#000000', foreground: '#FFFFFF', text: ◀ Previous}
+    type: Button
+  - layout_properties: {grid_position: 'FWYAMP,NEGENZ'}
+    name: next_button
+    properties: {background: '#000000', foreground: '#FFFFFF', text: Next ▶}
+    type: Button
   layout_properties: {slot: default}
   name: content_panel
   properties:
