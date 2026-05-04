@@ -181,7 +181,7 @@ components:
   properties:
     background: '#1B5886'
     spacing:
-      padding: [null, null, 157, null]
+      padding: [null, null, 169, null]
   type: ColumnPanel
 container:
   properties: {border: '2', html: '@theme:standard-page.html'}
